@@ -3,7 +3,7 @@
 """
 Created on Thu Jun  2 16:06:27 2022
 
-@author: jace
+@author: Zhenzi Yu
 """
 
 import os
@@ -19,8 +19,9 @@ import pymatgen.analysis.graphs as mgGraph
 import pymatgen.core.bonds  as mgBond
 import pymatgen.core.structure as mgStructure
 from pymatgen.io.vasp.inputs import Poscar
+from pymatgen.io.cif import CifParser,CifWriter
 
-from helper import CheckConnectivity, TreeSearch
+from helper import CheckConnectivity, TreeSearch, WriteStructure
 from DefectMOFStructure import DefectMOFStructure
 
 
@@ -62,8 +63,6 @@ class DefectMOFStructureBuilder():
         
         linker_bond_array, _ = CheckConnectivity(self.original_linkers,self.original_linkers)
     
-        # seperate linkers into different molecular
-        # TO-DO promt for different types of moleculars
         visited = []
         self.coord_dict = {}
         while len(visited) < self.original_linkers_length:
@@ -74,17 +73,17 @@ class DefectMOFStructureBuilder():
 
         for i,molecular_index in enumerate(self.moleculars_indexes):
             _sites_ = [self.original_linkers.sites[index] for index in molecular_index]
-            molecular = mgStructure.Structure.from_sites(_sites_)
-            self.moleculars.append(molecular)
+            if len(molecular_index) <=2:
+                for _site_ in _sites_:
+                    self.original_nodes.sites.append(_site_)
+            else:       
+                molecular = mgStructure.Structure.from_sites(_sites_)
+                self.moleculars.append(molecular)
             
-            # for metal, linker, coord mode, put metal in the second 
-            # linker_coord_array, _metal_dict_ = CheckConnectivity(molecular,self.original_nodes, mode='coord') 
-            # self.coord_dict[i] = _metal_dict_
-            # _coord_index_ = np.where((linker_coord_array==True).any(axis=1)==True)[0]
-            # self.coord_indexes.append(_coord_index_)
-        
+
         _linker_type_ = [ x.formula for x in self.moleculars]
         print("There are %d types, with a total %d linkers in the MOF Unit Cell" % ( len(np.unique(_linker_type_)), len(self.moleculars)))            
+
     
         return
 
@@ -103,57 +102,36 @@ class DefectMOFStructureBuilder():
     
     def StructureGeneration(self, superCell, defectConc):
         
-        
-        # superCell_count = superCell[0]*superCell[1]*superCell[2]
-        # num_of_delete_linkers = round(defectConc*superCell_count)
-        # if num_of_delete_linkers==0:
-        #     num_of_delete_linkers=1
-        # rand_linker = random.sample(range(0,len(self.moleculars)*superCell_count),num_of_delete_linkers)
-        # superCell_components = []
-        
-        working_linkers = copy.deepcopy(self.moleculars)
+        working_linkers = copy.deepcopy(self.original_linkers)
         working_nodes = copy.deepcopy(self.original_nodes)
 
-        linker_superCell = DefectMOFStructure(working_linkers, working_nodes, superCell)
-        linker_superCell.Build_supercell_component()
+        defect_structure = DefectMOFStructure(working_linkers, working_nodes, superCell ,0.05)
+        defect_structure.Build_supercell_component()
+        defect_structure.Coord_bond_Analysis()
+        defect_structure.DefectGen()
+        defect_structure.ReverseMonteCarlo()
         
-        all_components = linker_superCell.linkers.copy()
-        all_components.extend(linker_superCell.node_clusters)
-        for i,component in enumerate(all_components):
-            if i == 0:
-                output = copy.deepcopy(component)
-            else:
-                for site in component.sites:
-                    output.sites.append(site)
-                    
-        self.WriteStructure(output)
-        
-        return
-    
+        all_components = defect_structure.linkers.copy()
+        all_components.extend(defect_structure.node_clusters)
 
-    
+        return
     
     def LinkerVacancy(self):
         
         self.possible_Defect_Density = self._DefectDensityControl_()
-        self.StructureGeneration([2,2,2],0.05)
+        self.StructureGeneration([1,1,1],0.1)
         
         return
     
     def DebugVisualization():
         
         return
-    
-    def WriteStructure(self, structure, name = 'POSCAR', sort = True):
-        
-        if sort == True:
-            structure.sort()
-        out_POSCAR = Poscar(structure=structure)
-        # out_POSCAR.selective_dynamics=DynamicsM
-        out_POSCAR.write_file(os.path.join(self.output_dir,name))                
-        
-        return
-        
-    
-a = DefectMOFStructureBuilder('BEYSEF_clean.cif')
+
+cifFile_Name = 'MOF-801.cif'
+cifFile = CifParser(cifFile_Name)
+os.system('mv '+cifFile_Name+' original.cif')
+structure = cifFile.get_structures()[0]
+out = CifWriter(structure)
+out.write_file(cifFile_Name)
+a = DefectMOFStructureBuilder(cifFile_Name)
 a.LinkerVacancy()
