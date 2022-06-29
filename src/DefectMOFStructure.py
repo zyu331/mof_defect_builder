@@ -10,6 +10,7 @@ import numpy as np
 import time 
 import copy 
 import random
+import os 
 
 from pymatgen.core.lattice import Lattice
 from pymatgen.util.coord import lattice_points_in_supercell
@@ -17,11 +18,11 @@ from pymatgen.core.sites import PeriodicSite, Site
 import pymatgen.core.structure as mgStructure
 from pymatgen.util.coord import all_distances
 
-from helper import CheckConnectivity, TreeSearch, WarrenCowleyParameter, SwapNeighborList, WriteStructure,substitute_funcGroup
-from cappingAgent import water, water2, dummy, h2ooh, oh
+from src.helper import CheckConnectivity, TreeSearch, WarrenCowleyParameter, SwapNeighborList, WriteStructure,substitute_funcGroup
+from src.cappingAgent import water, water2, dummy, h2ooh, oh
 class DefectMOFStructure():
     
-    def __init__(self, linkers, nodes, superCell, defectConc):
+    def __init__(self, linkers, nodes, superCell, defectConc, numofdefect):
         
         self.original_linkers = linkers
         self.linkers = []
@@ -32,7 +33,7 @@ class DefectMOFStructure():
         self.coord_indexes_MetalCluster = {}
         self.superCell = superCell
         self.defectConc = defectConc
-
+        self.numofdefect = numofdefect
     def __mul__(self, structure, scaling_matrix, structure_type):
         """
         Makes a supercell. Allowing to have sites outside the unit cell
@@ -208,8 +209,8 @@ class DefectMOFStructure():
                     for site in component.sites:
                         # _nonpbc_site_ = Site(site.species,site.coords)
                         output.sites.append(site)
-                    
-        WriteStructure('.',output)
+        os.mkdir(str(self.defectConc))            
+        WriteStructure(str(self.defectConc),output, name = 'POSCAR')
         
         return
         
@@ -294,10 +295,11 @@ class DefectMOFStructure():
         print("Finish super cell build, which took %f Seconds" % (time.time()-t0))
         
     def DefectGen(self):
-        superCell_count = self.superCell[0]*self.superCell[1]*self.superCell[2]
-        num_of_delete_linkers = round(self.defectConc*superCell_count)
-        if num_of_delete_linkers==0:
-            num_of_delete_linkers=1
+        # superCell_count = self.superCell[0]*self.superCell[1]*self.superCell[2]
+        # num_of_delete_linkers = round(self.defectConc*superCell_count)
+        # if num_of_delete_linkers==0:
+        #     num_of_delete_linkers=1
+        num_of_delete_linkers = self.numofdefect
         rand_linker = random.sample(range(0,len(self.linkers)),num_of_delete_linkers)
         self.defectConc = len(rand_linker)/len(self.linkers)
         
@@ -359,10 +361,9 @@ class DefectMOFStructure():
                     new_neighbor_list = neighbor_list
                     
                 metric_Yb_history.append(metric_Yb)
-                self.Sub_with_Capping_agent(neighbor_list)
                 print(metric_Yb)
                 
-            
+        self.Sub_with_Capping_agent(neighbor_list)    
         print("Finish Coordination env analysis, which took %f Seconds" % (time.time()-t0))
             
         return neighbor_list  

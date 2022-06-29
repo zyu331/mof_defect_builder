@@ -9,12 +9,9 @@ This package is designed to generate initial guess of defect MOFS structures
 
 """
 
-
-      
-
-from DefectGenerator.CifDefectGenerator import CifDefectGenerator
+from src.DefectMOFGenerator import DefectMOFStructureBuilder
 import os
-
+from pymatgen.io.cif import CifParser,CifWriter
 def main():
     """
     Default file path system:
@@ -26,14 +23,15 @@ def main():
             
     """
     
-    path = r'cifs'
-    file = 'ATOXEN_clean.cif'
-    resultDir = 'results'
-    if not os.path.exists(resultDir):
-        os.system('mkdir '+resultDir)
-
-    oprator = CifDefectGenerator(path,file,resultDir)
-    oprator.Linkervacancy()
+    cifFolder = 'cifs/'
+    cifFile_Name = 'OCUNAC_manual_MIL101.cif'
+    cifFile = CifParser(cifFolder + cifFile_Name)
+    # os.system('mv '+cifFolder+cifFile_Name+' '+ cifFolder+'original.cif')
+    structure = cifFile.get_structures()[0]
+    out = CifWriter(structure)
+    out.write_file('src/'+cifFile_Name)
+    a = DefectMOFStructureBuilder(cifFolder+cifFile_Name)
+    a.LinkerVacancy()
 
 if __name__ == '__main__':
     main()

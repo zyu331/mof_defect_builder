@@ -17,7 +17,7 @@ from pymatgen.util.coord import all_distances, get_angle, lattice_points_in_supe
 from pymatgen.core.sites import PeriodicSite
 from pymatgen.core.operations import SymmOp
 
-import cappingAgent
+import src.cappingAgent as cappingAgent
 
 def TreeSearch(x, visited, bond_array):
     """
