@@ -1,0 +1,1 @@
+N#CC(C(c1ccc(cc1)[C](C#N)C#N)(C#N)C#N)(c1ccc(cc1)[C](C#N)C#N)C#N.[Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.UNKNOWN.cat0;MUVGOA_clean_min_charges

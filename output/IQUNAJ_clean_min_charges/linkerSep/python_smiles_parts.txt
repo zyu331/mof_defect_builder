@@ -1,0 +1,3 @@
+node	[K]
+node	[Y]
+linker	[O-]C(=O)C(=O)[O-]

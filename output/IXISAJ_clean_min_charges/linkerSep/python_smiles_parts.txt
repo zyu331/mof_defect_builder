@@ -1,0 +1,4 @@
+node	Br[Cu]Br
+node	[Cu]
+node	[Cu]Br
+linker	C1Cc2nnc3c4c2c(C1)nnc4CCC3

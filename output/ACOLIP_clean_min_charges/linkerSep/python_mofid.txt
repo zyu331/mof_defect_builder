@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(c(c1)N)C(=O)[O-].[Zn].c1ncn(c1)Cc1ccc(cc1)Cn1cncc1 MOFid-v1.dia.cat0;ACOLIP_clean_min_charges

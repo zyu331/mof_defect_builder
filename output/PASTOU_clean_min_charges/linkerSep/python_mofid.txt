@@ -1,0 +1,1 @@
+C1=N[CH]N([N]1)CC1=Nc2c([N]1)cccc2.Cl[Cd] MOFid-v1.ERROR.cat1;PASTOU_clean_min_charges

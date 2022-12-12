@@ -1,0 +1,1 @@
+[In][O]([In])[In].[O-]C(=O)c1ccc(cc1)Oc1ccc(cc1)C(=O)[O-].[O-][C]=O MOFid-v1.UNKNOWN.cat0;IYUJAO_clean_min_charges

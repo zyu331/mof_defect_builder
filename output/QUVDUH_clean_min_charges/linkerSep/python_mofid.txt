@@ -1,0 +1,1 @@
+[O-]C(=O)C(=O)[O-].[O]P(=O)(C[NH](CP(=O)(O)[O])CC1=CN[CH]C=C1)O.[Y] MOFid-v1.ERROR.cat0;QUVDUH_clean_min_charges

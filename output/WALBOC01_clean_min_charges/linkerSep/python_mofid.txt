@@ -1,0 +1,1 @@
+NC1=NN=C[N]1.NC1=[N]=CN=N1.[O-]C(=O)C(=O)[O-].[Zn] MOFid-v1.ERROR.cat0;WALBOC01_clean_min_charges

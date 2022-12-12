@@ -1,0 +1,3 @@
+node	I[Cu]([Cu](I)I)I
+node	I[Cu]12(I)[Cu]3[Cu]1[Cu]23I
+linker	n1ccc(cc1)c1cc(c2ccncc2)c(cc1c1ccncc1)c1ccncc1

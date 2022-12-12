@@ -1,0 +1,1 @@
+[Ca].[O-]C(=O)c1ccc(cc1)C(=O)[O-] MOFid-v1.UNKNOWN.cat0;NOCKUM_clean_min_charges

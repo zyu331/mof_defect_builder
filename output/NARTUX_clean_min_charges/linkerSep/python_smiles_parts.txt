@@ -1,0 +1,2 @@
+node	[Ca]
+linker	O=C(c1cc(cc(c1)C(=O)NCC(=O)[O-])C(=O)NCC(=O)[O-])NCC(=O)[O-]

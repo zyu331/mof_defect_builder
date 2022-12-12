@@ -1,0 +1,2 @@
+node	[Zn]
+linker	CCOc1cc(C2=CC(=[C]C(=C2)C(=O)[O-])C(=O)[O-])c2c(c1c1c(OCC)cc(c3c1ccc(c3)Cl)c1cc(cc(c1)C(=O)[O-])C(=O)[O-])ccc(c2)Cl

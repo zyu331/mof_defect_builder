@@ -1,0 +1,2 @@
+node	[Zn]Br
+linker	CC(C(C(=O)[O-])NCc1ccncc1)C

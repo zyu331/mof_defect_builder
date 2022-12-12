@@ -1,0 +1,4 @@
+node	[Ag][Ag]
+linker	N1=C[N]N([CH]1)Cc1ccc(cc1)CN1[N]C=N[CH]1
+linker	[O-]C(=O)c1cncc(c1)C(=O)[O-]
+linker	n1cnn(c1)Cc1ccc(cc1)Cn1ncnc1

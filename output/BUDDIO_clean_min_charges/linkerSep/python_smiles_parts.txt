@@ -1,0 +1,2 @@
+node	[OH2][K]
+linker	[O-]C(=O)c1ccc(nc1)c1ccc(cn1)C(=O)[O-]

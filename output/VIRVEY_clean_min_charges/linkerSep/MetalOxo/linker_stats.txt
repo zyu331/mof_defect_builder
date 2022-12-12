@@ -1,0 +1,2 @@
+MPFLRYZEEAQMLQ-UHFFFAOYSA-L	5	8	InChI=1S/C7H5NO4/c9-6(10)4-1-5(7(11)12)3-8-2-4/h1-3H,(H,9,10)(H,11,12)/p-2	MPFLRYZEEAQMLQ	[O-]C(=O)c1cncc(c1)C(=O)[O-]	[O-][C]([c]1[cH][n][cH][c]([cH]1)[C]([O])[O-])[O]
+

@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1cc(ccc1C(=O)[O-])C(=O)[O-] MOFid-v1.UNKNOWN.cat0;ULOGIL_clean_min_charges

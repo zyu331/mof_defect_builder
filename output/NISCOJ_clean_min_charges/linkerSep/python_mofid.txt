@@ -1,0 +1,1 @@
+C[C]1[N][N][C](N1c1ccc(cc1)C(=O)[O-])C.[O-]C(=O)c1ccc(cc1)n1c(C)nnc1C.[Zn] MOFid-v1.dia.cat1;NISCOJ_clean_min_charges

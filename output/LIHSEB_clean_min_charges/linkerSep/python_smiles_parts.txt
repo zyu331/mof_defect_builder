@@ -1,0 +1,5 @@
+node	[Cd]
+node	[Cd]I
+linker	C1=N[N]C=N1
+linker	[N]1=CN=NC=1
+linker	[N]1C=NN=C1

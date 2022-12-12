@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)CCn1c(=O)n(CCC(=O)[O-])c(=O)n(c1=O)CCC(=O)[O-] MOFid-v1.UNKNOWN.cat0;TOHYUL_clean_min_charges

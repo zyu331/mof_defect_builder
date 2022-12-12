@@ -2,11 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Nov 26 21:48:48 2021
-
-@author: jace
-
-This package is designed to generate initial guess of defect MOFS structures
-
+@author: Zhenzi Yu
+This package is used to generate initial guess of defect MOFS structures
 """
 
 from src.DefectMOFGenerator import DefectMOFStructureBuilder
@@ -31,9 +28,15 @@ def main(formatting):
     cifFolder = 'cifs/'
     cifList = os.listdir(cifFolder)
     stat_file = ['archive','cifs','output','main.py','README.md','requirements.txt','src']
+
+    # cifList = ['CUNXIS_clean_min_charges.cif']
+    cifList.sort()
     for cifName in cifList:
-        op = DefectMOFStructureBuilder( cifName, input_dir = cifFolder, output_dir= 'output/')
-        op.LinkerVacancy()    
+        try:
+            op = DefectMOFStructureBuilder( cifName, input_dir = cifFolder, output_dir= 'output/')
+            op.LinkerVacancy()    
+        except:
+            pass
 
 if __name__ == '__main__':
-    main(True)
+    main(False)

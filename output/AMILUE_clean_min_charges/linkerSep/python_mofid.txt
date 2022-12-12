@@ -1,0 +1,1 @@
+C1N2CN3CN1CN(C2)C3.[O-]C(=O)c1ccc2c(c1)ccc(c2)C(=O)[O-].[Zn].[Zn][Zn] MOFid-v1.UNKNOWN.cat0;AMILUE_clean_min_charges

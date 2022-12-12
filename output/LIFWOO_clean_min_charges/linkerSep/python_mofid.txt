@@ -1,0 +1,1 @@
+[Zn].n1ccc(cc1)c1ccc2c(c1)ccc(c2)c1ccncc1 MOFid-v1.sql.cat3;LIFWOO_clean_min_charges

@@ -1,0 +1,2 @@
+node	[Cd]
+linker	[O-]C(=O)c1ccc(nc1)c1ccncc1

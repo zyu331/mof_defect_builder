@@ -1,0 +1,1 @@
+C1=N[N]C=N1.[N]1=CN=NC=1.[Zn] MOFid-v1.tsa.cat0;GIMVAA_clean_min_charges

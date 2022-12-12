@@ -1,0 +1,4 @@
+node	[Au]
+node	[Pt]
+node	[Zn]
+linker	NC(C([S])(C)C)C(=O)[O-]

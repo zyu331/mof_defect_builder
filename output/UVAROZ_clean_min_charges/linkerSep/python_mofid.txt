@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(cc1)C=Cc1ccncc1.[Zn] MOFid-v1.dia.cat0;UVAROZ_clean_min_charges

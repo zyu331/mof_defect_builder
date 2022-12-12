@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(cc1)c1ccc(cc1)C(=O)[O-].[O][Zn][Zn][O].[Zn][Zn].n1ccc(cc1)C1=N[N]C(=N[N]1)c1ccncc1.n1ccc(cc1)c1nnc(nn1)c1ccncc1 MOFid-v1.MISMATCH.cat2;UVUPOR_clean_min_charges

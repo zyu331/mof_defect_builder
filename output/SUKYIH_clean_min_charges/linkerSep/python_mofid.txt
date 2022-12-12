@@ -1,0 +1,1 @@
+[Cu][Cu].[O-]C(=O)c1ccc(cc1)C(c1ccc(cc1)C(=O)[O-])(c1ccc(cc1)C(=O)[O-])c1ccc(cc1)C(=O)[O-] MOFid-v1.pts.cat0;SUKYIH_clean_min_charges

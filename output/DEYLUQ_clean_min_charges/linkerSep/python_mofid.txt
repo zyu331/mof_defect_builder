@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1c(Br)c(Br)c(c(c1Br)Br)C(=O)[O-].c1ncn(c1)c1cc(cc(c1)n1cncc1)n1cncc1 MOFid-v1.UNKNOWN.cat0;DEYLUQ_clean_min_charges

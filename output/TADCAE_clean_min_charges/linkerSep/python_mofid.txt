@@ -1,0 +1,1 @@
+[O-]C(=O)c1nc(C(=O)[O-])c(cc1C(=O)[O-])C(=O)[O-].[Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.UNKNOWN.cat0;TADCAE_clean_min_charges

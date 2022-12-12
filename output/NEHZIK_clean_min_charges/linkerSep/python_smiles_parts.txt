@@ -1,0 +1,2 @@
+node	[Zn]
+linker	[O-]C(=O)C=Cc1cnc[nH]1

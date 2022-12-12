@@ -1,0 +1,2 @@
+node	Cl[Cu]
+linker	n1ccc(cc1)C1=N[N]N=N1

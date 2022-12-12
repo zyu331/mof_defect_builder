@@ -1,0 +1,2 @@
+node	[Cu]
+linker	O=[C]1=NC=CC=N1

@@ -1,0 +1,1 @@
+C(Cc1ccncc1)Cc1ccncc1.[O-]C(=O)CC(=O)[O-].[Zn] MOFid-v1.UNKNOWN.cat0;KEXKEF_clean_min_charges

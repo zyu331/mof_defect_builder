@@ -1,0 +1,4 @@
+node	[Cd]
+node	[Ni]
+linker	NCCCCCCN
+linker	[C]#N

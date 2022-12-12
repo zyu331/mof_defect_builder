@@ -1,0 +1,2 @@
+node	Cl[Cd]Cl
+linker	n1ccc(cc1)C1C(c2ccncc2)C(C1c1ccncc1)c1ccncc1

@@ -1,0 +1,2 @@
+node	[Y]
+linker	[O-]C(=O)c1cncc(c1)C(=O)[O-]

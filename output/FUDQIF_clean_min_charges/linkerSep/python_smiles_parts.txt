@@ -1,0 +1,4 @@
+node	F[Zn]F
+node	[Zn]
+linker	[N]=CC=NC=[CH]
+linker	n1ccncc1

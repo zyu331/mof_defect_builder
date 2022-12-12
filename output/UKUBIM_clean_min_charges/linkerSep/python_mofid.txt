@@ -1,0 +1,1 @@
+[Cd].n1ccc(cc1)OCC(COc1ccncc1)(COc1ccncc1)COc1ccncc1 MOFid-v1.pts.cat1;UKUBIM_clean_min_charges

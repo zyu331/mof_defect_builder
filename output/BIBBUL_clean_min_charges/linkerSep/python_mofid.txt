@@ -1,0 +1,1 @@
+Cc1nccn1CCCCn1ccnc1C.[O-]C(=O)c1cccnc1c1ncccc1C(=O)[O-].[Zn] MOFid-v1.dia.cat0;BIBBUL_clean_min_charges

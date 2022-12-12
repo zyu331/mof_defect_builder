@@ -1,0 +1,4 @@
+node	[Zn]
+node	[Zn][Zn]
+linker	N1=C[C](C=N1)c1cc(cc(c1)C1=CN=N[CH]1)C1=C[N]N=C1
+linker	[N]1N=CC(=C1)c1cc(cc(c1)C1=CN=N[CH]1)C1=CN=N[CH]1

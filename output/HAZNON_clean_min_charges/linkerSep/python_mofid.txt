@@ -1,0 +1,1 @@
+[Cd][OH2][Cd].[O-]C(=O)c1cc(Br)cnc1 MOFid-v1.ERROR.cat0;HAZNON_clean_min_charges

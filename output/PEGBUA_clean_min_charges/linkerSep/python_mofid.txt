@@ -1,0 +1,1 @@
+CC1=NN=C([N]1)CC1=[N]=C(N=N1)C.CC1=[N]=C(N=N1)CC1=[N]=C(N=N1)C.[Zn] MOFid-v1.raa,UNKNOWN.cat0;PEGBUA_clean_min_charges

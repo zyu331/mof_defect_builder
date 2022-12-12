@@ -1,0 +1,2 @@
+node	Cl[Cd]
+linker	OCC(C(=O)[O-])NCc1ccncc1

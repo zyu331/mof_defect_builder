@@ -1,0 +1,1 @@
+[C]#N.[Ca]1[OH2][Ca][OH2]1.[Fe] MOFid-v1.ERROR.cat1;GEHSAN_clean_min_charges

@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)C1=C([N]C=N1)C(=O)[O-].[O-]C(=O)C1=NC=N[C]1C(=O)O MOFid-v1.UNKNOWN.cat0;UXEQOE_clean_min_charges

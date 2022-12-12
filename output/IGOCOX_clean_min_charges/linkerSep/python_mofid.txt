@@ -1,0 +1,1 @@
+Cl[Zn].N1=NC2=CC3=NN=NC43C(C2=N1)[C]4.N1=NN=C([C]1)[CH]C1=[C]N=N[N]1.N1=Nc2c(=N1)cc1c(=NN=N1)c2.[Zn] MOFid-v1.ERROR.cat0;IGOCOX_clean_min_charges

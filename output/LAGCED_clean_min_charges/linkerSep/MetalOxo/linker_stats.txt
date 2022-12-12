@@ -1,0 +1,2 @@
+CUFUTOQXCOZGCE-UHFFFAOYSA-N	5	6	InChI=1S/C17H9N2O2/c18-10-12-1-5-14(6-2-12)16(20)9-17(21)15-7-3-13(11-19)4-8-15/h1-9H	CUFUTOQXCOZGCE	N#Cc1ccc(cc1)C(=CC(=O)c1ccc(cc1)C#N)[O]	[N][C][c]1[cH][cH][c]([cH][cH]1)[C]([CH][C]([c]1[cH][cH][c]([cH][cH]1)[C][N])[O])[O]
+

@@ -1,0 +1,1 @@
+C1=C[N]C=N1.C1=N[CH]C=N1.[Zn] MOFid-v1.cag.cat0;VEJYUF01_clean_min_charges

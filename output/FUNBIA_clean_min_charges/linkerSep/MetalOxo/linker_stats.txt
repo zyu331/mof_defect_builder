@@ -1,0 +1,3 @@
+SRTQKANXPMBQCX-UHFFFAOYSA-J	4	4	InChI=1S/C34H22O8/c35-31(36)23-9-1-19(2-10-23)27-17-29(21-5-13-25(14-6-21)33(39)40)30(22-7-15-26(16-8-22)34(41)42)18-28(27)20-3-11-24(12-4-20)32(37)38/h1-18H,(H,35,36)(H,37,38)(H,39,40)(H,41,42)/p-4	SRTQKANXPMBQCX	[O-]C(=O)c1ccc(cc1)c1cc(c2ccc(cc2)C(=O)[O-])c(cc1c1ccc(cc1)C(=O)[O-])c1ccc(cc1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[c]1[cH][c]([c]2[cH][cH][c]([cH][cH]2)[C]([O])[O-])[c]([cH][c]1[c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[O]
+XUPMSLUFFIXCDA-UHFFFAOYSA-N	2	4	InChI=1S/C10H8N4/c1-5-11-6-2-9(1)13-14-10-3-7-12-8-4-10/h1-8H	XUPMSLUFFIXCDA	n1ccc(cc1)[N][N]c1ccncc1	[n]1[cH][cH][c]([cH][cH]1)[N][N][c]1[cH][cH][n][cH][cH]1
+

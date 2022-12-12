@@ -1,0 +1,2 @@
+AAFXQFIGKBLKMC-UHFFFAOYSA-L	4	12	InChI=1S/C12H10O4/c13-11(14)7-5-9-1-2-10(4-3-9)6-8-12(15)16/h1-8H,(H,13,14)(H,15,16)/p-2	AAFXQFIGKBLKMC	[O-]C(=O)C=Cc1ccc(cc1)C=CC(=O)[O-]	[O-][C]([CH][CH][c]1[cH][cH][c]([cH][cH]1)[CH][CH][C]([O])[O-])[O]
+

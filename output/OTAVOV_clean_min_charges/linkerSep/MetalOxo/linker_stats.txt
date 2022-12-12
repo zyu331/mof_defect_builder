@@ -1,0 +1,3 @@
+CEJJXIXKGPQQNG-UHFFFAOYSA-N	2	8	InChI=1S/C10H8N2O2/c13-11-5-1-9(2-6-11)10-3-7-12(14)8-4-10/h1-8H	CEJJXIXKGPQQNG	[O-][n+]1ccc(cc1)c1cc[n+](cc1)[O-]	[O-][n+]1[cH][cH][c]([cH][cH]1)[c]1[cH][cH][n+]([cH][cH]1)[O-]
+WPYMKLBDIGXBTP-UHFFFAOYSA-M	2	16	InChI=1S/C7H6O2/c8-7(9)6-4-2-1-3-5-6/h1-5H,(H,8,9)/p-1	WPYMKLBDIGXBTP	[O-]C(=O)c1ccccc1	[O-][C]([c]1[cH][cH][cH][cH][cH]1)[O]
+

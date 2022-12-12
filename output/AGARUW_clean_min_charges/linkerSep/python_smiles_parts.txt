@@ -1,0 +1,3 @@
+node	[La]
+linker	[O-]C(=O)[O-]
+linker	[O-]C(=O)c1[nH][n-]c(c1)C(=O)[O-]

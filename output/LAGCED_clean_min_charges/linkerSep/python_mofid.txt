@@ -1,0 +1,1 @@
+N#Cc1ccc(cc1)C(=CC(=O)c1ccc(cc1)C#N)[O].[Ag].[Zn] MOFid-v1.UNKNOWN.cat0;LAGCED_clean_min_charges

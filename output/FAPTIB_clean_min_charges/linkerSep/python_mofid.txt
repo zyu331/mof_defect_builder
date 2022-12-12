@@ -1,0 +1,1 @@
+Nc1cc(cc(c1)C(=O)[O-])C(=O)[O-].[Cd].n1ccc(cc1)c1ccncc1 MOFid-v1.ERROR.cat0;FAPTIB_clean_min_charges

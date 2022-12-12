@@ -1,0 +1,1 @@
+[N]1=CN=NC=1.[N]1C=NN=C1.[O-]C(=O)c1cccc(c1)C(=O)[O-].[Zn] MOFid-v1.ERROR.cat0;LACJAC_clean_min_charges

@@ -1,0 +1,4 @@
+node	[La]
+node	[Y]
+linker	[O-]C(=O)COCC(=O)[O-]
+linker	[O-]C(=O)[CH2]

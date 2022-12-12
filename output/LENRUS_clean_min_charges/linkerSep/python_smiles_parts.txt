@@ -1,0 +1,2 @@
+node	[Ag]
+linker	[O-]C(=O)c1csc(n1)c1ccncc1

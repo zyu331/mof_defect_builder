@@ -1,0 +1,1 @@
+O=C1C=C([CH]C(=C1)C(=O)[O-])C(=O)[O-].[O]c1cc(cc(c1)C(=O)[O-])C(=O)[O-].[Zn] MOFid-v1.apo.cat0;OFUYUL_clean_min_charges

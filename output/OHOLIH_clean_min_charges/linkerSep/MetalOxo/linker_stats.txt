@@ -1,0 +1,3 @@
+WPUMVKJOWWJPRK-UHFFFAOYSA-L	4	7	InChI=1S/C12H8O4/c13-11(14)8-3-1-7-2-4-9(12(15)16)6-10(7)5-8/h1-6H,(H,13,14)(H,15,16)/p-2	WPUMVKJOWWJPRK	[O-]C(=O)c1ccc2c(c1)cc(cc2)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]2[c]([cH]1)[cH][c]([cH][cH]2)[C]([O])[O-])[O]
+VNLCKWBEGORROV-UHFFFAOYSA-L	2	1	InChI=1S/C12H8O4.Zn/c13-11(14)8-3-1-7-2-4-9(12(15)16)6-10(7)5-8;/h1-6H,(H,13,14)(H,15,16);/p-2	VNLCKWBEGORROV	[O-]C(=O)c1ccc2c(c1)[CH]C(C=C2)([Zn])C(=O)[O-]	[O-][C]([c]1[cH][cH][c]2[c]([cH]1)[CH]C([CH][CH]2)([Zn])[C]([O])[O-])[O]
+

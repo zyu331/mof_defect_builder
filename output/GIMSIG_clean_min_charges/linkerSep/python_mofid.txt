@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1ccncc1.[O]S(=O)(=O)[O] MOFid-v1.sod.cat0;GIMSIG_clean_min_charges

@@ -1,0 +1,3 @@
+node	[Cd]
+linker	[O-]C(=O)C1=C([N]C=N1)C(=O)[O-]
+linker	[O-]C(=O)C1=NC=N[C]1C(=O)O

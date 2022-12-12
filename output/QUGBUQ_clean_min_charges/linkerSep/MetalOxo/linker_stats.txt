@@ -1,0 +1,3 @@
+MPFLRYZEEAQMLQ-UHFFFAOYSA-L	3	4	InChI=1S/C7H5NO4/c9-6(10)4-1-5(7(11)12)3-8-2-4/h1-3H,(H,9,10)(H,11,12)/p-2	MPFLRYZEEAQMLQ	[O-]C(=O)c1cncc(c1)C(=O)[O-]	[O-][C]([c]1[cH][n][cH][c]([cH]1)[C]([O])[O-])[O]
+SDAUVSLAZIXWAU-UHFFFAOYSA-N	2	4	InChI=1S/C12H12N6/c1-2-12(6-18-10-14-8-16-18)4-3-11(1)5-17-9-13-7-15-17/h1-4,7-10H,5-6H2	SDAUVSLAZIXWAU	n1cnn(c1)Cc1ccc(cc1)Cn1ncnc1	[n]1[cH][n]n([cH]1)C[c]1[cH][cH][c]([cH][cH]1)Cn1[n][cH][n][cH]1
+

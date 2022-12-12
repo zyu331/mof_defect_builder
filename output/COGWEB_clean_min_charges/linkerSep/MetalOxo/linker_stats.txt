@@ -1,0 +1,3 @@
+RXOHFPCZGPKIRD-UHFFFAOYSA-L	2	4	InChI=1S/C12H8O4/c13-11(14)9-3-1-7-5-10(12(15)16)4-2-8(7)6-9/h1-6H,(H,13,14)(H,15,16)/p-2	RXOHFPCZGPKIRD	[O-]C(=O)c1ccc2c(c1)ccc(c2)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]2[c]([cH]1)[cH][cH][c]([cH]2)[C]([O])[O-])[O]
+STFBNKBOVQHPSO-UHFFFAOYSA-N	2	2	InChI=1S/C32H16N4O4/c37-29-19-11-13-21-28-22(32(40)36(31(21)39)26-10-2-8-24-18(26)6-4-16-34-24)14-12-20(27(19)28)30(38)35(29)25-9-1-7-23-17(25)5-3-15-33-23/h1-16H	STFBNKBOVQHPSO	O=C1c2ccc3c4c2c(C(=O)N1c1cccc2c1cccn2)ccc4C(=O)N(C3=O)c1cccc2c1cccn2	[O][C]1[c]2[cH][cH][c]3[c]4[c]2[c]([C](N1[c]1[cH][cH][cH][c]2[c]1[cH][cH][cH][n]2)[O])[cH][cH][c]4[C](N([C]3[O])[c]1[cH][cH][cH][c]2[c]1[cH][cH][cH][n]2)[O]
+

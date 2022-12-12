@@ -1,0 +1,5 @@
+node	[Cd]
+node	[Hg]
+node	[S][Hg]
+linker	[N][C][S]
+linker	[S]C#N

@@ -1,0 +1,1 @@
+[C]c1cc(cc(c1)C(=O)[O-])C(=O)[O-].[Cu][Cu].[O-]C(=O)[C]=C[C]C=[C]C(=O)[O-].[O-]C(=O)c1cc(C#Cc2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-] MOFid-v1.UNKNOWN.cat0;NUTQEZ_clean_min_charges

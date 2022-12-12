@@ -1,0 +1,2 @@
+DNVYEGXUYFGHAW-UHFFFAOYSA-N	4	2	InChI=1S/C20H14N4/c1-3-15(9-21-5-1)17-7-19(13-23-11-17)20-8-18(12-24-14-20)16-4-2-6-22-10-16/h1-14H	DNVYEGXUYFGHAW	c1ccc(cn1)c1cncc(c1)c1cncc(c1)c1cccnc1	[cH]1[cH][cH][c]([cH][n]1)[c]1[cH][n][cH][c]([cH]1)[c]1[cH][n][cH][c]([cH]1)[c]1[cH][cH][cH][n][cH]1
+

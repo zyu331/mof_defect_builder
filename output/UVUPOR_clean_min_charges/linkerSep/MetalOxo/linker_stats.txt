@@ -1,0 +1,3 @@
+NEQFBGHQPUXOFH-UHFFFAOYSA-L	2	5	InChI=1S/C14H10O4/c15-13(16)11-5-1-9(2-6-11)10-3-7-12(8-4-10)14(17)18/h1-8H,(H,15,16)(H,17,18)/p-2	NEQFBGHQPUXOFH	[O-]C(=O)c1ccc(cc1)c1ccc(cc1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[O]
+MQSMIIJCRWDMDL-UHFFFAOYSA-N	2	3	InChI=1S/C12H8N6/c1-5-13-6-2-9(1)11-15-17-12(18-16-11)10-3-7-14-8-4-10/h1-8H	MQSMIIJCRWDMDL	n1ccc(cc1)c1nnc(nn1)c1ccncc1	[n]1[cH][cH][c]([cH][cH]1)[c]1[n][n][c]([n][n]1)[c]1[cH][cH][n][cH][cH]1
+

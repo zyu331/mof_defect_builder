@@ -1,0 +1,3 @@
+WFZSWYLQBYYCAF-UHFFFAOYSA-M	4	1	InChI=1S/C13H9N2O5/c16-7-9-1-11(5-14-3-9)19-8-20-12-2-10(13(17)18)4-15-6-12/h1-6H,8H2,(H,17,18)/p-1	WFZSWYLQBYYCAF	O=[C]c1cncc(c1)OCOc1cncc(c1)C(=O)[O-]	[O][C][c]1[cH][n][cH][c]([cH]1)OCO[c]1[cH][n][cH][c]([cH]1)[C]([O])[O-]
+MJFYYCHSFIATMT-UHFFFAOYSA-L	4	7	InChI=1S/C13H10N2O6/c16-12(17)8-1-10(5-14-3-8)20-7-21-11-2-9(13(18)19)4-15-6-11/h1-6H,7H2,(H,16,17)(H,18,19)/p-2	MJFYYCHSFIATMT	[O-]C(=O)c1cncc(c1)OCOc1cncc(c1)C(=O)[O-]	[O-][C]([c]1[cH][n][cH][c]([cH]1)OCO[c]1[cH][n][cH][c]([cH]1)[C]([O])[O-])[O]
+

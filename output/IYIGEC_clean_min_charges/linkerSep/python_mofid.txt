@@ -1,0 +1,1 @@
+C1N2CN3CN1CN(C2)C3.[Ag].[O]S(CCN1CCN(CC1)CCS([O])([O])[O])([O])[O] MOFid-v1.UNKNOWN.cat0;IYIGEC_clean_min_charges

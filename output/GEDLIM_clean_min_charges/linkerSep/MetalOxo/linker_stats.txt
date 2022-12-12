@@ -1,0 +1,2 @@
+MMHYEYMBDZNXNQ-UHFFFAOYSA-M	2	8	InChI=1S/C10H9N3O2/c1-7-12-11-6-13(7)9-4-2-8(3-5-9)10(14)15/h2-6H,1H3,(H,14,15)/p-1	MMHYEYMBDZNXNQ	[O-]C(=O)c1ccc(cc1)n1cnnc1C	[O-][C]([c]1[cH][cH][c]([cH][cH]1)n1[cH][n][n][c]1C)[O]
+

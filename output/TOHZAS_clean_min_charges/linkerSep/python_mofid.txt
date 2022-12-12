@@ -1,0 +1,1 @@
+[Cd].[Cd]O[Cd].[O-]C(=O)CCn1c(=O)n(CCC(=O)[O-])c(=O)n(c1=O)CCC(=O)[O-].[O][C]CCn1c(=O)n(CCC(=O)[O-])c(=O)n(c1=O)CCC(=O)[O-] MOFid-v1.UNKNOWN.cat0;TOHZAS_clean_min_charges

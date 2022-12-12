@@ -1,0 +1,1 @@
+Cl[Cd]Cl.n1ccc(cc1)C1C(c2ccncc2)C(C1c1ccncc1)c1ccncc1 MOFid-v1.pts.cat1;AMIKOX_clean_min_charges

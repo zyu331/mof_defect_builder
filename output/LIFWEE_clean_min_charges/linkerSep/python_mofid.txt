@@ -1,0 +1,1 @@
+CC1=NN=C([N]1)C.[Cu].[O-]C(=O)C(=O)[O-] MOFid-v1.ERROR.cat0;LIFWEE_clean_min_charges

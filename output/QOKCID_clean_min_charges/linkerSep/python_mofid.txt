@@ -1,0 +1,1 @@
+[O-]C(=O)c1cc(OCc2cccc(c2)COc2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-].[Zn] MOFid-v1.tfj,UNKNOWN.cat0;QOKCID_clean_min_charges

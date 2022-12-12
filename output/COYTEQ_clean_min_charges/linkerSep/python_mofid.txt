@@ -1,0 +1,1 @@
+[La].[O-]C(=O)c1cc(cc(n1)C(=O)[O-])c1cc(nc(c1)C(=O)O)C(=O)[O-] MOFid-v1.ERROR.cat0;COYTEQ_clean_min_charges

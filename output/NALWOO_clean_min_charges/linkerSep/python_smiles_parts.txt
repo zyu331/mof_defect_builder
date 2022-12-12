@@ -1,0 +1,2 @@
+node	[Ba]
+linker	[O-]C(=O)c1ccc(cc1)c1cc(cc(c1)c1ccc(cc1)C(=O)O)c1ccc(cc1)C(=O)[O-]

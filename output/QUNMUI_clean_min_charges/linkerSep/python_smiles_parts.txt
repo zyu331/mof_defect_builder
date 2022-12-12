@@ -1,0 +1,4 @@
+node	[Cd]
+node	[Cd][Cd]
+linker	[CH]1C=NN=N1
+linker	[N]1C=CN=N1

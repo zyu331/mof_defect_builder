@@ -1,0 +1,1 @@
+NC1=C2N=CN=C2[N]C=N1.NC1=NC=[N]=C2[C]1N=C[N]2.Nc1ncnc2=[N]=CN=c12.[O-]C(=O)c1ccncc1.[Zn] MOFid-v1.dmp.cat0;UXUZAP_clean_min_charges

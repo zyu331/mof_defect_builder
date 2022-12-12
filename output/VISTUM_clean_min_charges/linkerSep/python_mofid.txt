@@ -1,0 +1,1 @@
+C1N2CN3CN1CN(C2)C3.[C]#N.[C][N].[Cd] MOFid-v1.UNKNOWN.cat0;VISTUM_clean_min_charges

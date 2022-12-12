@@ -1,0 +1,2 @@
+YCGAZNXXGKTASZ-UHFFFAOYSA-L	4	8	InChI=1S/C6H4O4S/c7-5(8)3-1-2-4(11-3)6(9)10/h1-2H,(H,7,8)(H,9,10)/p-2	YCGAZNXXGKTASZ	[O-]C(=O)c1ccc(s1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c](s1)[C]([O])[O-])[O]
+

@@ -1,0 +1,1 @@
+[O-]C(=O)c1cc(C(=O)[O-])c(cc1C(=O)[O-])C(=O)[O-].[Zn] MOFid-v1.UNKNOWN.cat0;LIKFOB_clean_min_charges

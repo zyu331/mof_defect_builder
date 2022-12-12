@@ -1,0 +1,3 @@
+node	[La]
+linker	[O]P(=O)(CN1CCN(CC1)CP(=O)([O])[O])[O]
+linker	[O]P(=O)(C[NH]1CC[NH](CC1)CP(=O)([O])[O])[O]

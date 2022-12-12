@@ -1,0 +1,1 @@
+[O-]C(=O)c1cc(cc(c1)C(=O)[O-])C(=O)[O-].[Zn] MOFid-v1.srs.cat0;SENWAL_clean_min_charges

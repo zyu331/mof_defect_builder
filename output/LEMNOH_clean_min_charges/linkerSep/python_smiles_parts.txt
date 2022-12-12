@@ -1,0 +1,2 @@
+node	[Fe]
+linker	N#C[C](C(=C(C#N)C#N)C#N)C#N

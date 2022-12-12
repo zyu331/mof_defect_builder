@@ -1,0 +1,2 @@
+ODZMHCIJUWMUIH-UHFFFAOYSA-M	3	16	InChI=1S/C6H6N6O2/c13-6(14)5(11-3-7-1-9-11)12-4-8-2-10-12/h1-5H,(H,13,14)/p-1	ODZMHCIJUWMUIH	[O-]C(=O)C(n1ncnc1)n1ncnc1	[O-][C](C(n1[n][cH][n][cH]1)n1[n][cH][n][cH]1)[O]
+

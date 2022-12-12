@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1cc2N=C[N]c2cc1C(=O)[O-] MOFid-v1.UNKNOWN.cat0;QUJFUX_clean_min_charges

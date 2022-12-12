@@ -1,0 +1,1 @@
+Cl[Pt]Cl.[O-]C(=O)c1cncc(c1)C(=O)[O-].[Zn] MOFid-v1.tfi.cat0;VIRVEY_clean_min_charges

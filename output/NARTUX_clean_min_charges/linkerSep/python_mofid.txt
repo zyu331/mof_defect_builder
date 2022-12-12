@@ -1,0 +1,1 @@
+O=C(c1cc(cc(c1)C(=O)NCC(=O)[O-])C(=O)NCC(=O)[O-])NCC(=O)[O-].[Ca] MOFid-v1.ERROR.cat0;NARTUX_clean_min_charges

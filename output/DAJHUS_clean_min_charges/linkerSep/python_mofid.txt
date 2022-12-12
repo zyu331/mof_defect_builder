@@ -1,0 +1,1 @@
+[Co][Co].[O-]C(=O)c1ccc2c(c1)ccc(c2)C(=O)[O-].n1ccc(cc1)C=Cc1ccncc1 MOFid-v1.pcu.cat0;DAJHUS_clean_min_charges

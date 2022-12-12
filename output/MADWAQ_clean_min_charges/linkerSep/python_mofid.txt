@@ -1,0 +1,1 @@
+S1Cc2ccc(cc2)CSCc2ccc(C1)cc2.[Cu]Br MOFid-v1.UNKNOWN.cat3;MADWAQ_clean_min_charges

@@ -1,0 +1,2 @@
+PLAHDGUGKFODNG-UHFFFAOYSA-M	2	16	InChI=1S/C11H11N3O2/c1-7-12-13-8(2)14(7)10-5-3-9(4-6-10)11(15)16/h3-6H,1-2H3,(H,15,16)/p-1	PLAHDGUGKFODNG	[O-]C(=O)c1ccc(cc1)n1c(C)nnc1C	[O-][C]([c]1[cH][cH][c]([cH][cH]1)n1[c](C)[n][n][c]1C)[O]
+

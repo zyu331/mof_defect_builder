@@ -1,0 +1,3 @@
+node	[Cu][W][Cu]
+node	[S]
+linker	c1ncn(c1)Cc1ccc(cc1)Cn1cncc1

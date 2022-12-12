@@ -1,0 +1,1 @@
+[O-]C(=O)[C]1[CH][CH]c2c([CH]1)ccc(c2)C(=O)[O-].[O-]C(=O)c1ccc2c(c1)ccc(c2)C(=O)[O-].[Zn][Zn].n1ccc(cc1)C=Cc1ccncc1 MOFid-v1.pcu.cat1;RELLAW_clean_min_charges

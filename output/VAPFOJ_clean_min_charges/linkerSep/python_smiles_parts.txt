@@ -1,0 +1,2 @@
+node	[Ba]
+linker	[O-]C(=O)C1=CC2=C3C=C(C=CN3[Pt]N2C=C1)C(=O)[O-]

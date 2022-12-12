@@ -1,0 +1,2 @@
+FRYVITLFHRLVKD-UHFFFAOYSA-L	2	12	InChI=1S/C12H8O4/c13-11(14)9-6-10(12(15)16)8-5-3-1-2-4-7(8)9/h1-6H,(H,13,14)(H,15,16)/p-2	FRYVITLFHRLVKD	[O-]C(=O)c1cc(c2-c1ccccc2)C(=O)[O-]	[O-][C]([c]1[cH][c]([c]2-[c]1[cH][cH][cH][cH][cH]2)[C]([O])[O-])[O]
+

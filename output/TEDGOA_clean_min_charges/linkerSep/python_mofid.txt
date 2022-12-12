@@ -1,0 +1,1 @@
+[N]1N=NC(=N1)c1cc(cc(c1)C1=NN=N[N]1)C1=N[N]N=N1.[N]1N=NC(=N1)c1cc(cc(c1)C1=N[N]N=N1)C1=N[N]N=N1.[Zn] MOFid-v1.UNKNOWN.cat0;TEDGOA_clean_min_charges

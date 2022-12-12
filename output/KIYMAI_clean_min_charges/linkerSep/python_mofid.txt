@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(c2c1cccc2)C(=O)[O-].[Sr] MOFid-v1.UNKNOWN.cat0;KIYMAI_clean_min_charges

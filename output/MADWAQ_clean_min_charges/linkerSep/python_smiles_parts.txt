@@ -1,0 +1,2 @@
+node	[Cu]Br
+linker	S1Cc2ccc(cc2)CSCc2ccc(C1)cc2

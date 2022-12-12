@@ -1,0 +1,1 @@
+O=C1C(=O)C(=O)C1=O.[Ca] MOFid-v1.UNKNOWN.cat0;FIRVEH_clean_min_charges

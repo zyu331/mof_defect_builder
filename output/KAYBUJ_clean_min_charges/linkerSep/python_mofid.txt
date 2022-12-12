@@ -1,0 +1,1 @@
+[Ca].[O-]C(=O)c1ccnc(c1)C(=O)[O-] MOFid-v1.UNKNOWN.cat0;KAYBUJ_clean_min_charges

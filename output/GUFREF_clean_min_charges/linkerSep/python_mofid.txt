@@ -1,0 +1,1 @@
+C(Cc1ccncc1)Cc1ccncc1.[Cd].[O-]C(=O)Cc1cccc(c1)CC(=O)[O-] MOFid-v1.ERROR.cat0;GUFREF_clean_min_charges

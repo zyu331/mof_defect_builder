@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1oc(cc(=O)c1)C(=O)[O-].[O]C1=C[C](OC(=C1)C(=O)[O-])C(=O)[O-] MOFid-v1.tfa.cat0;CICYIX_clean_min_charges

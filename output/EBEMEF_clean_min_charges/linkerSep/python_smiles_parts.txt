@@ -1,0 +1,3 @@
+node	[Ni]
+node	[Zn]
+linker	[C]#N

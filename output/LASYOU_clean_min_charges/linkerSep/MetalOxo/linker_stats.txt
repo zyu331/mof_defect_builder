@@ -1,0 +1,2 @@
+QURGMSIQFRADOZ-UHFFFAOYSA-J	4	3	InChI=1S/C16H10O8/c17-13(18)9-1-7(2-10(5-9)14(19)20)8-3-11(15(21)22)6-12(4-8)16(23)24/h1-6H,(H,17,18)(H,19,20)(H,21,22)(H,23,24)/p-4	QURGMSIQFRADOZ	[O-]C(=O)c1cc(cc(c1)C(=O)[O-])c1cc(cc(c1)C(=O)[O-])C(=O)[O-]	[O-][C]([c]1[cH][c]([cH][c]([cH]1)[C]([O])[O-])[c]1[cH][c]([cH][c]([cH]1)[C]([O])[O-])[C]([O])[O-])[O]
+

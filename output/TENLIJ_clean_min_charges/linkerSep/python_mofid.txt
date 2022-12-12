@@ -1,0 +1,1 @@
+[O-]C(=O)c1cccc(n1)C(=O)[O-].[Zn].n1ccc(cc1)OCC(COc1ccncc1)(COc1ccncc1)COc1ccncc1 MOFid-v1.xux,UNKNOWN.cat1;TENLIJ_clean_min_charges

@@ -1,0 +1,2 @@
+node	[Cd][OH2][Cd]
+linker	[O-]C(=O)c1cc(Br)cnc1

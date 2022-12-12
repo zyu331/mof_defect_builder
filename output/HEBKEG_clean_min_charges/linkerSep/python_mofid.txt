@@ -1,0 +1,1 @@
+Cl[Cd].OCC(C(=O)[O-])NCc1ccncc1 MOFid-v1.srs.cat0;HEBKEG_clean_min_charges

@@ -1,0 +1,1 @@
+O=C1c2ccc3c4c2c(C(=O)N1c1cccc2c1cccn2)ccc4C(=O)N(C3=O)c1cccc2c1cccn2.[O-]C(=O)c1ccc2c(c1)ccc(c2)C(=O)[O-].[Zn][Zn] MOFid-v1.pcu.cat1;COGWEB_clean_min_charges

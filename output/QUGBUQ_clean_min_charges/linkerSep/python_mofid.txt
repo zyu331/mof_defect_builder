@@ -1,0 +1,1 @@
+N1=C[N]N([CH]1)Cc1ccc(cc1)CN1[N]C=N[CH]1.[Ag][Ag].[O-]C(=O)c1cncc(c1)C(=O)[O-].n1cnn(c1)Cc1ccc(cc1)Cn1ncnc1 MOFid-v1.UNKNOWN.cat0;QUGBUQ_clean_min_charges

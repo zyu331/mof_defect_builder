@@ -1,0 +1,1 @@
+CN(C1=N[P](N=C([N]1)N(C)C)(Oc1ccncc1)Oc1ccncc1)C.Cl[Cd].Cl[Cd](Cl)Cl MOFid-v1.ERROR.cat3;VUQKUO_clean_min_charges

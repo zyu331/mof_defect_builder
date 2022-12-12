@@ -1,0 +1,1 @@
+[Ba].[Cd].[O-]C(=O)c1cccc(c1)C(=O)[O-].[O]N(=O)=O MOFid-v1.ERROR.cat0;FEZREJ_clean_min_charges

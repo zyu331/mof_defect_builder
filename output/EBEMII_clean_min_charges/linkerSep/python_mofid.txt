@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1nccnc1C(=O)[O-].n1ccc(cc1)C=Cc1ccncc1 MOFid-v1.ERROR.cat0;EBEMII_clean_min_charges

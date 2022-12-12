@@ -1,0 +1,2 @@
+QCWTWMJMLSKQCJ-UHFFFAOYSA-M	3	32	InChI=1S/C6H5NO3/c8-6(9)5-1-3-7(10)4-2-5/h1-4H,(H,8,9)/p-1	QCWTWMJMLSKQCJ	[O-][n+]1ccc(cc1)C(=O)[O-]	[O-][n+]1[cH][cH][c]([cH][cH]1)[C]([O])[O-]
+

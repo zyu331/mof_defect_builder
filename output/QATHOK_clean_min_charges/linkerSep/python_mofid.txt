@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1nccc(c1)c1ccnc(c1)C(=O)[O-] MOFid-v1.ERROR.cat0;QATHOK_clean_min_charges

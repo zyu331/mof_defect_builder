@@ -1,0 +1,3 @@
+node	[Cd]
+linker	O=N(=O)c1cc(ccc1C(=O)[O-])C(=O)[O-]
+linker	n1ccncc1

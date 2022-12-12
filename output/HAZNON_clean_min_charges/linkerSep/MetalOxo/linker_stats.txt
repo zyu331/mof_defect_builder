@@ -1,0 +1,2 @@
+FQIUCPGDKPXSLL-UHFFFAOYSA-M	2	32	InChI=1S/C6H4BrNO2/c7-5-1-4(6(9)10)2-8-3-5/h1-3H,(H,9,10)/p-1	FQIUCPGDKPXSLL	[O-]C(=O)c1cc(Br)cnc1	[O-][C]([c]1[cH][c](Br)[cH][n][cH]1)[O]
+

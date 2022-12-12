@@ -1,0 +1,1 @@
+[CH][CH]C(=CC=[C]C(=O)[O-])OCC(COc1ccc(cc1)C(=O)[O-])(COc1ccc(cc1)C(=O)[O-])COc1ccc(cc1)C(=O)[O-].[O-]C(=O)c1ccc(cc1)OCC(COc1ccc(cc1)C(=O)[O-])(COc1ccc(cc1)C(=O)[O-])COc1ccc(cc1)C(=O)[O-].[Zn] MOFid-v1.UNKNOWN.cat0;RUMWUS_clean_min_charges

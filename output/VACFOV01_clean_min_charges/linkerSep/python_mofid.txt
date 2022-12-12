@@ -1,0 +1,1 @@
+[In].[O-]C(=O)c1ccc(cc1)C(=O)[O-] MOFid-v1.qtz.cat0;VACFOV01_clean_min_charges

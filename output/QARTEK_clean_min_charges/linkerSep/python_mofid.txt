@@ -1,0 +1,1 @@
+Cl[Cd].Fc1ccc(cc1)n1cc(C(=O)[O-])c(=O)c2c1cc(N1CCNCC1)c(c2)F MOFid-v1.sql.cat1;QARTEK_clean_min_charges

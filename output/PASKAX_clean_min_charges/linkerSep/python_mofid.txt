@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)COc1cccc2c1cccc2OCC(=O)[O-].c1ncn(c1)c1ccc(cc1)n1cncc1 MOFid-v1.ERROR.cat0;PASKAX_clean_min_charges

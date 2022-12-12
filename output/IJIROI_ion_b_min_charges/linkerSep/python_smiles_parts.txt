@@ -1,0 +1,5 @@
+node	[K]
+node	[O]
+node	[O][V]
+node	[V][V]
+linker	[O]P(=O)(CP(=O)([O])[O])[O]

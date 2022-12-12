@@ -1,0 +1,2 @@
+node	[Zn]
+linker	[O-]C(=O)C[NH2]CC(=O)[O-]

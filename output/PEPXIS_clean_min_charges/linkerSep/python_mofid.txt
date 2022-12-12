@@ -1,0 +1,1 @@
+C1=N[N]C=N1.Cl[Zn].[N]1C=NN=C1.[Zn] MOFid-v1.UNKNOWN.cat0;PEPXIS_clean_min_charges

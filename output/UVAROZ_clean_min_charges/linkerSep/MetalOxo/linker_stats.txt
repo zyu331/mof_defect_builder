@@ -1,0 +1,2 @@
+NUMRJFUDFISUFQ-UHFFFAOYSA-M	2	8	InChI=1S/C14H11NO2/c16-14(17)13-5-3-11(4-6-13)1-2-12-7-9-15-10-8-12/h1-10H,(H,16,17)/p-1	NUMRJFUDFISUFQ	[O-]C(=O)c1ccc(cc1)C=Cc1ccncc1	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[CH][CH][c]1[cH][cH][n][cH][cH]1)[O]
+

@@ -1,0 +1,3 @@
+node	[Ag]
+linker	NC1=NC(=[N]=C([N]1)N)N
+linker	[O-]C(=O)CC(=O)[O-]

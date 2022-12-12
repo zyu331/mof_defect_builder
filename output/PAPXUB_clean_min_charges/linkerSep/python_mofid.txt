@@ -1,0 +1,1 @@
+[Cd].[S]C#N.c1ccc(cn1)COc1cccc(c1)[CH][N][N][CH]c1cccc(c1)OCc1cccnc1 MOFid-v1.ERROR.cat0;PAPXUB_clean_min_charges

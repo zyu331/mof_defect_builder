@@ -1,0 +1,3 @@
+node	F[Al]F
+node	[Al]
+linker	[O]P(=O)(CCP(=O)([O])[O])[O]

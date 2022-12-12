@@ -1,0 +1,4 @@
+node	[Cd]
+linker	C1N2CN3CN1CN(C2)C3
+linker	[C]#N
+linker	[C][N]

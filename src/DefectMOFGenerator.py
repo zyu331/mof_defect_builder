@@ -6,7 +6,7 @@ Created on Thu Jun  2 16:06:27 2022
 @author: Zhenzi Yu
 """
 
-import os
+import os,sys
 import numpy as np
 import copy
 import time 
@@ -19,16 +19,17 @@ import pymatgen.analysis.graphs as mgGraph
 import pymatgen.core.bonds  as mgBond
 import pymatgen.core.structure as mgStructure
 from pymatgen.io.vasp.inputs import Poscar
-
+from pymatgen.io.xyz import XYZ
 
 from src.helper import StructureAnalysis, WriteStructure, DebugVisualization
 from src.DefectMOFStructure import DefectMOFStructure
 
 from ase.io import read, write
 
+CHARGE_APP_PATH = 'python /home/zhenzi/src/xyz2mol/'
 
 class DefectMOFStructureBuilder():
-    
+   
     def __init__(self, cifFile_Name, input_dir = '.', output_dir = '.', sepMode = 'MetalOxo', cutoff = 12.8 ):
         
         self.cifFile_Name = cifFile_Name
@@ -59,17 +60,19 @@ class DefectMOFStructureBuilder():
  
         # use the packge to seperate the linker/nodes and read in
         t0 = time.time()
-        cif2mofid(self.cifFile ,output_path = linkerSepDir)
+
+        _ = cif2mofid(self.cifFile ,output_path = linkerSepDir)
         self.original_linkers = self.ReadStructure(os.path.join(linkerSepDir, self.sepMode, 'linkers.cif'))
         self.original_nodes = self.ReadStructure(os.path.join(linkerSepDir, self.sepMode, 'nodes.cif'))
-        print("SBU seperation finished, which takes %f Seconds" % (time.time()-t0))
+        print("========== Now working on %s ==========" %(self.cifFile_Name))
+        print("1. SBU seperation finished, which takes %f Seconds" % (time.time()-t0))
 
         self.original_linkers,self.original_nodes,formulas = self.MOFStructurePropertyAssginment(self.original_linkers,self.original_nodes)
 
         # print and summary
         # TODO: add some check function to make sure the right structure is read into the code 
 
-        print("There are %d atoms in Metal Cluster, and %d atoms in linkers, with %d linkers, %d types" \
+        print("2. MOF Analysis: There are %d atoms in Metal Clusters, and %d atoms in linkers, with %d linkers of %d types" \
         % ( len(self.original_nodes), len(self.original_linkers), self.linker_num, len(np.unique(formulas))))            
 
         return None
@@ -121,7 +124,11 @@ class DefectMOFStructureBuilder():
             sites = [ original_linkers[i] for i in index ]
             molecule = mgStructure.Structure.from_sites(sites)
             self.molecules.append(molecule)
-        formulas = [ x.formula for x in self.molecules]
+        _formulas_ = [ x.formula for x in self.molecules]
+        formulas = []
+        for formula in _formulas_:
+            if len(formula) > 3:
+                formulas.append(formula)
         self.linker_type = np.unique(formulas) 
         
         # construct new MOF structure: add lable distinguishing Metal/linker, add label for linker type, 
@@ -137,6 +144,9 @@ class DefectMOFStructureBuilder():
         is_linker = np.full(len(original_linkers),True)
 
         for jj,molecule in enumerate(self.molecules):
+            if len(molecule.formula) <=3:
+                self.linker_num -= 1
+                continue
             linker_type_num = np.where(self.linker_type == molecule.formula)[0]
             linker_label[indexes[jj]] = linker_type_num
         original_linkers.add_site_property('linker_label',linker_label)
@@ -150,69 +160,78 @@ class DefectMOFStructureBuilder():
     def _DefectDensityControl_(self):
         
         cell = self.original_Structure.lattice.abc
-        min_index = cell.index(min(cell))
-        max_index = cell.index(max(cell))
-        # fix a = b = c 
-        if max_index==min_index:
-            max_index += 1
-        _mid_index = [0,1,2]
-        _mid_index.remove(min_index)
-        _mid_index.remove(max_index)
-        mid_index = _mid_index[0]
-        
-        def assign_supercell(cellnum):
-            cell = [1,1,1]
-            if cellnum == 1:
-                return cell
-            elif cellnum ==2 or cellnum==3 or cellnum==5:
-                cell[min_index] = cellnum
-            elif cellnum == 6:
-                cell[min_index] = 2
-                cell[mid_index] = 3
-            elif cellnum == 4:
-                cell[min_index] = 2
-                cell[mid_index] = 2
-            else:
-                raise "error for super cell assignment"
-            return cell
+        upper_lim = 40
+        achived_conc = {1/self.linker_num:(1,[1,1,1])}
+        max_supercell = [1,1,1]
+        for i,dim in enumerate(cell):
+            max_supercell[i] = max(1,int(np.floor(upper_lim/dim)))
 
-        enumerate_conc = [1/2,1/3,2/3,1/4,3/4,1/5,2/5,3/5,4/5,1/6,5/6,1,2,3,4,5,6]
-        corr_defect_num = [1,1,2,1,3,1,2,3,4,1,5,1,2,3,4,5,6]
-        corr_cell = [2,3,3,4,4,5,5,5,5,6,6,1,1,1,1,1,1]
-        original_conc = 1/self.linker_num
-        desired_conc = [0.01, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4]
-        desired_conc.reverse()
-        achived_conc = {}
-        
-        for _conc_goal_ in desired_conc:
-            for i,_conc_possible_ in enumerate(enumerate_conc):
-                _conc_possible2_ = original_conc*_conc_possible_
-                if abs((_conc_possible2_-_conc_goal_)/_conc_goal_) < 0.3:
-                    achived_conc[_conc_possible2_] = [_conc_goal_, corr_defect_num[i], corr_cell[i], assign_supercell(corr_cell[i])]
-                    break
-        
-        
+        for i in range(1,max_supercell[0]+1):
+            for j in range(1,max_supercell[1]+1):
+                for k in range(1,max_supercell[2]+1):
+                    num_of_linker = 1
+                    conc = num_of_linker/(self.linker_num*i*j*k)
+                    
+                    while conc < 0.4:
+                        addFlag = True
+                        dict_keys = list(achived_conc.keys())
+                        for exist_conc in dict_keys:
+                            if conc > 0.01 and (exist_conc-conc)/conc < 0.3:
+                                exisitng_v = achived_conc[exist_conc][1][0]*achived_conc[exist_conc][1][1]*achived_conc[exist_conc][1][2]
+                                new_v =  i*j*k
+                                if new_v < 0.6*exisitng_v:
+                                    del achived_conc[exist_conc]
+                                elif new_v >= exisitng_v:
+                                    addFlag = False
+                        if addFlag:
+                            achived_conc[conc] = (num_of_linker,[i,j,k])
+
+                        num_of_linker += 1
+                        conc = num_of_linker/(self.linker_num*i*j*k)
+                                    
         return achived_conc
     
     def StructureGeneration(self, superCell, defectConc, numofdefect, linker_type):
         
         working_linkers, working_nodes= copy.deepcopy(self.original_linkers), copy.deepcopy(self.original_nodes)
-        working_mof = self.Concat_linkers_nodes(working_linkers,  working_nodes)
+        working_mof = self.Concat_linkers_nodes(working_linkers, working_nodes)
         
         with open('src/charge_dict.json') as json_file:
             charge_dict = json.load(json_file)
-        
+
         if self.linker_type[linker_type] in charge_dict.keys():
             charge_comp = charge_dict[self.linker_type[linker_type]]
         else:
-            
+            success = False
             for molecule in self.molecules:
-                if molecule.formula == self.linker_type[linker_type]:
-                    vis_structure = molecule
+                if success:
                     break
-            DebugVisualization(vis_structure)
-
-            charge_comp = input("unseen molecular:%s, please specify charge\n"%(self.linker_type[linker_type] ))
+                if molecule.formula == self.linker_type[linker_type]:
+                    os.system('rm temp.xyz')
+                    XYZ(molecule).write_file('temp.xyz')
+                    O_count = [ xx for xx in molecule.species if xx.name == 'O']
+                    if len(O_count)!= 0:
+                        re = os.popen( CHARGE_APP_PATH+'xyz2mol.py temp.xyz --ignore-chiral --charge -'+str(int(len(O_count))/2)).read()
+                        if len(re) > 0:
+                            charge_comp = -trial_charge
+                            success = True
+                            break
+                        else:
+                            vis_structure = molecule
+                            DebugVisualization(vis_structure)
+                            charge_comp = input("unseen molecular:%s, please specify charge\n"%(self.linker_type[linker_type] ))
+                            success = True
+                            break
+                    for trial_charge in range(0,6):
+                        re = os.popen( CHARGE_APP_PATH+'xyz2mol.py temp.xyz --ignore-chiral --charge -'+str(trial_charge)).read()
+                        if len(re) > 0:
+                            charge_comp = -trial_charge
+                            success = True
+                            break
+            if not success:
+                vis_structure = molecule
+                DebugVisualization(vis_structure)
+                charge_comp = input("unseen molecular:%s, please specify charge\n"%(self.linker_type[linker_type] ))
             try:
                 charge_comp = int(charge_comp)
             except:
@@ -233,9 +252,12 @@ class DefectMOFStructureBuilder():
         
         self.possible_Defect_Density = self._DefectDensityControl_()
         for i_linker,linker_type in enumerate(self.linker_type):
+            # skip H only and metal only
+            if len(linker_type)<=2:
+                continue
             for key,val in self.possible_Defect_Density.items():
-                print("Currently generate linker vacancy defect with %s, at conc. of %.3f" %(linker_type,key))
-                self.StructureGeneration(val[3],key,val[1], i_linker)
+                print("3. Generate linker vacancy defect structure with %s, at conc. of %.3f" %(linker_type,key))
+                self.StructureGeneration(val[1],key,val[0], i_linker)
         
         return
     

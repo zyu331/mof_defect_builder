@@ -1,0 +1,1 @@
+[O-]C(=O)c1cccc(c1)Oc1ccc(cc1)Oc1cccc(c1)C(=O)[O-].[Zn][Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.pcu.cat0;WEBREC_clean_min_charges

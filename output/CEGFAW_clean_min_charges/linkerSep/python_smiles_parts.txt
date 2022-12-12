@@ -1,0 +1,4 @@
+node	[Ag]1[Ag][Ag][Ag]1
+node	[Ag][Ag]
+linker	CC1=NC=C[N]1
+linker	CC1=N[CH]C=N1

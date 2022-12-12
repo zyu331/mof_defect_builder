@@ -1,0 +1,7 @@
+node	[O][Zn]
+node	[Zn]
+linker	FC1=[C]C(=C(C(=C1F)C(=O)[O-])F)F
+linker	F[C][C][C](C(=C([C]F)F)[O])F
+linker	Fc1c([O])c(F)c(c(c1F)C(=O)[O-])F
+linker	[O-][C]=O
+linker	n1ccc(cc1)c1ccncc1

@@ -1,0 +1,1 @@
+[La].[O-]C(=O)c1ccccc1.[O-][n+]1ccc(cc1)c1cc[n+](cc1)[O-] MOFid-v1.ERROR.cat0;OTAVOV_clean_min_charges

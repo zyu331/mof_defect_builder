@@ -1,0 +1,1 @@
+N1=C[N]N([CH]1)Cc1ccc(cc1)c1ccc(cc1)CN1[N]C=N[CH]1.[O-]C(=O)c1cc(C(=O)[O-])c(cc1C(=O)[O-])C(=O)[O-].[Zn] MOFid-v1.UNKNOWN.cat0;ILOJEZ_clean_min_charges

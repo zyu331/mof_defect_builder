@@ -1,0 +1,1 @@
+O=P12CN3CN(C2)CN(C1)C3.[Ag][Ag] MOFid-v1.ERROR.cat1;AVEMOE_clean_min_charges

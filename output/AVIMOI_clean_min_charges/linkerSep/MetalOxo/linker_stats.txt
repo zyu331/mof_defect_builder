@@ -1,0 +1,2 @@
+PIDBTEHSRNNXGY-UHFFFAOYSA-J	7	8	InChI=1S/C30H22O10/c31-27(32)21-9-22(28(33)34)12-25(11-21)39-15-17-1-5-19(6-2-17)20-7-3-18(4-8-20)16-40-26-13-23(29(35)36)10-24(14-26)30(37)38/h1-14H,15-16H2,(H,31,32)(H,33,34)(H,35,36)(H,37,38)/p-4	PIDBTEHSRNNXGY	[O-]C(=O)c1cc(OCc2ccc(cc2)c2ccc(cc2)COc2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-]	[O-][C]([c]1[cH][c](OC[c]2[cH][cH][c]([cH][cH]2)[c]2[cH][cH][c]([cH][cH]2)CO[c]2[cH][c]([cH][c]([cH]2)[C]([O])[O-])[C]([O])[O-])[cH][c]([cH]1)[C]([O])[O-])[O]
+

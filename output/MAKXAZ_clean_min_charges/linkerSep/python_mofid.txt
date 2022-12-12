@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(cc1)c1ccc(cc1)C(=O)[O-].[Zn].n1ccc(cc1)CCc1ccncc1 MOFid-v1.UNKNOWN.cat0;MAKXAZ_clean_min_charges

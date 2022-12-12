@@ -1,0 +1,1 @@
+COc1cc(ccc1c1ccc(cc1OC)C(=O)[O-])C(=O)[O-].[Zn][O]([Zn])([Zn])[Zn] MOFid-v1.pcu.cat1;FERHAN_clean_min_charges

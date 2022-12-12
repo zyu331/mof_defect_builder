@@ -1,0 +1,5 @@
+node	F[Al]
+node	F[Al]([Al])F
+node	F[Al]F
+node	[Al]
+linker	[O]P(=O)(C#CC#CP(=O)([O])[O])[O]

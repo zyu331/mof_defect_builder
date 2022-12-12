@@ -1,0 +1,1 @@
+O=C(c1ccncc1)Nc1cc(cc(c1)C(=O)[O-])C(=O)[O-].[Zn][Zn] MOFid-v1.rtl,sql.cat0;HAMJOW_clean_min_charges

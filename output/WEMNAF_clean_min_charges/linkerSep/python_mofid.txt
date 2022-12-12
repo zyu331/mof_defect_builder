@@ -1,0 +1,1 @@
+N1=C[N]N([CH]1)Cc1c(CN2[N]C=N[CH]2)c(CN2[N]C=N[CH]2)c(c(c1CN1[N]C=N[CH]1)CN1[N]C=N[CH]1)CN1[N]C=N[CH]1.[O-]C(=O)C=CC(=O)[O-].[O]S(=O)(=O)[O].[Zn] MOFid-v1.UNKNOWN.cat0;WEMNAF_clean_min_charges

@@ -1,0 +1,2 @@
+node	[La]
+linker	[O-]C(=O)COc1ccc(cc1)OCC(=O)[O-]

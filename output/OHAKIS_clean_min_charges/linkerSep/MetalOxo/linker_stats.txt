@@ -1,0 +1,2 @@
+LFIDZIWWYNTQOQ-UHFFFAOYSA-M	2	16	InChI=1S/C10H8N2O2/c13-10(14)8-1-3-9(4-2-8)12-6-5-11-7-12/h1-7H,(H,13,14)/p-1	LFIDZIWWYNTQOQ	[O-]C(=O)c1ccc(cc1)n1cncc1	[O-][C]([c]1[cH][cH][c]([cH][cH]1)n1[cH][n][cH][cH]1)[O]
+

@@ -1,0 +1,1 @@
+[O-]C(=O)COc1ccc(cc1)C(=O)[O-].[Zn][Zn].n1ccc(cc1)CCc1ccncc1 MOFid-v1.rob.cat0;PIHNUQ_clean_min_charges

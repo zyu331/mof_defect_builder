@@ -1,0 +1,1 @@
+C1=C[N]C=N1.[Zn] MOFid-v1.cag.cat0;GIZJOP_clean_min_charges

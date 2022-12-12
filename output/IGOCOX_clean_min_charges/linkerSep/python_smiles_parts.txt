@@ -1,0 +1,5 @@
+node	Cl[Zn]
+node	[Zn]
+linker	N1=NC2=CC3=NN=NC43C(C2=N1)[C]4
+linker	N1=NN=C([C]1)[CH]C1=[C]N=N[N]1
+linker	N1=Nc2c(=N1)cc1c(=NN=N1)c2

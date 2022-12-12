@@ -1,0 +1,3 @@
+node	[Cd]
+linker	[S]C#N
+linker	c1ccc(cn1)COc1cccc(c1)[CH][N][N][CH]c1cccc(c1)OCc1cccnc1

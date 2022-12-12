@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(cc1)C(=O)[O-].[Y][Y] MOFid-v1.ERROR.cat0;LAGNUE_clean_min_charges

@@ -1,0 +1,5 @@
+node	[Zn]
+linker	N#CC(C(c1ccc(cc1)[C](C#N)C#N)(C#N)C#N)(c1ccc(cc1)[C](C#N)C#N)C#N
+linker	[CH]1N=C[CH][C]([CH]1)c1ccncc1
+linker	[N]1[CH][CH]C(=C[CH]1)c1ccncc1
+linker	n1ccc(cc1)c1ccncc1

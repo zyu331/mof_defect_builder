@@ -1,0 +1,4 @@
+node	[Y]
+linker	[O-]C(=O)C1=CN=CC(=[C]1)C(=O)[O-]
+linker	[O-]C(=O)c1cncc(c1)C(=O)O
+linker	[O-]C(=O)c1cncc(c1)C(=O)[O-]

@@ -1,0 +1,2 @@
+SATWKVZGMWCXOJ-UHFFFAOYSA-L	6	8	InChI=1S/C27H18O6/c28-25(29)19-7-1-16(2-8-19)22-13-23(17-3-9-20(10-4-17)26(30)31)15-24(14-22)18-5-11-21(12-6-18)27(32)33/h1-15H,(H,28,29)(H,30,31)(H,32,33)/p-2	SATWKVZGMWCXOJ	[O-]C(=O)c1ccc(cc1)c1cc(cc(c1)c1ccc(cc1)C(=O)O)c1ccc(cc1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[c]1[cH][c]([cH][c]([cH]1)[c]1[cH][cH][c]([cH][cH]1)[C]([O])O)[c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[O]
+

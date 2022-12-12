@@ -1,0 +1,1 @@
+N1=NC2=C[CH]C(=CC2=N1)c1ccc2c(c1)[N]N=N2.N1=NC2=C[C](C=CC2=N1)c1ccc2c(c1)N=N[N]2.[Zn] MOFid-v1.acs.cat0;BICDAU_clean_min_charges

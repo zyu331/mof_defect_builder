@@ -1,0 +1,1 @@
+[O-]C=O.[Zn] MOFid-v1.met.cat0;RATDAS02_clean_min_charges

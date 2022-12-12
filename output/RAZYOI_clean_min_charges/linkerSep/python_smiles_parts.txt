@@ -1,0 +1,2 @@
+node	Cl[Cu]
+linker	C1Cc2nnc3c4c2c2C1CCc1c2c2c4C(CC3)CCc2nn1

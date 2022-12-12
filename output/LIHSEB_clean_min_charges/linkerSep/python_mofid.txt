@@ -1,0 +1,1 @@
+C1=N[N]C=N1.[Cd].[Cd]I.[N]1=CN=NC=1.[N]1C=NN=C1 MOFid-v1.UNKNOWN.cat0;LIHSEB_clean_min_charges

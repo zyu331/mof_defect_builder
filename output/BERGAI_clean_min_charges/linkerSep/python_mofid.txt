@@ -1,0 +1,1 @@
+NC1=NN=C[N]1.[O-]C(=O)c1ccc(cc1)C(=O)[O-].[Zn] MOFid-v1.ERROR.cat0;BERGAI_clean_min_charges

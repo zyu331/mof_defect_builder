@@ -1,0 +1,1 @@
+[O-]C(=O)c1cc(cc(c1)C(=O)[O-])C(=O)[O-].[Zn][OH][Zn] MOFid-v1.llj.cat0;ESEVIH_clean_min_charges

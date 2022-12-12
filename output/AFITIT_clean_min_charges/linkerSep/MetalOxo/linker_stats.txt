@@ -1,0 +1,3 @@
+VLWQGEBWTFWSHY-UHFFFAOYSA-L	2	6	InChI=1S/C18H14O4/c1-11-9-15(17(19)20)7-5-13(11)3-4-14-6-8-16(18(21)22)10-12(14)2/h5-10H,1-2H3,(H,19,20)(H,21,22)/p-2	VLWQGEBWTFWSHY	Cc1cc(ccc1C#Cc1ccc(cc1C)C(=O)[O-])C(=O)[O-]	C[c]1[cH][c]([cH][cH][c]1[C][C][c]1[cH][cH][c]([cH][c]1C)[C]([O])[O-])[C]([O])[O-]
+MWVTWFVJZLCBMC-UHFFFAOYSA-N	2	3	InChI=1S/C10H8N2/c1-5-11-6-2-9(1)10-3-7-12-8-4-10/h1-8H	MWVTWFVJZLCBMC	n1ccc(cc1)c1ccncc1	[n]1[cH][cH][c]([cH][cH]1)[c]1[cH][cH][n][cH][cH]1
+

@@ -1,0 +1,1 @@
+[Cu].n1ccc(cc1)C1=NN=N[N]1.n1ccc(cc1)C1=N[N]N=N1 MOFid-v1.sra.cat0;IBUDOZ_clean_min_charges

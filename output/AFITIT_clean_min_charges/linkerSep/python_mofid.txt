@@ -1,0 +1,1 @@
+Cc1cc(ccc1C#Cc1ccc(cc1C)C(=O)[O-])C(=O)[O-].[Zn][Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.pcu.cat2;AFITIT_clean_min_charges

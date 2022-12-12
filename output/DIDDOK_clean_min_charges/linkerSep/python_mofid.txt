@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(cc1)Oc1ccc(cc1)C(=O)[O-].[Zn][Zn].n1ccc(cc1)C=Cc1ccncc1 MOFid-v1.rob.cat0;DIDDOK_clean_min_charges

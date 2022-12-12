@@ -9,7 +9,8 @@ from cmath import isclose
 import numpy as np
 import os
 import copy
-from sklearn.cluster import DBSCAN
+from sklearn.cluster import DBSCAN,KMeans
+from collections import Counter
 
 import pymatgen.core.bonds  as mgBond
 from pymatgen.io.vasp.inputs import Poscar
@@ -21,6 +22,8 @@ from pymatgen.core.operations import SymmOp
 from scipy.sparse.csgraph import connected_components
 from pymatgen.core.sites import PeriodicSite, Site
 from pymatgen.vis.structure_vtk import StructureVis
+from pymatgen.analysis.local_env import CrystalNN, BrunnerNN_real
+
 
 import src.cappingAgent as cappingAgent 
 import warnings
@@ -38,23 +41,26 @@ import warnings
 
 
 def StructureAnalysis(linker, metal):
+    def cluster_assginemnt(structure,length):     
+        bond_array = np.full((length,length), 0, dtype=int)          
+        for i in range(length):
+            for j in range(i+1,length):
+                try:
+                    isbond = mgBond.CovalentBond.is_bonded(structure[i],structure[j])
+                except:
+                    isbond = False
+                if isbond:
+                    bond_array[i,j] = 1
+                    bond_array[j,i] = 1          
+                else:
+                    bond_array[i,j] = 0
+        cluster_assignment = connected_components(bond_array)
+
+        return cluster_assignment
 
     len1,len2 = len(linker),len(metal)
-    bond_array = np.full((len1,len1), 0, dtype=int)
-                   
-    for i in range(len1):
-        for j in range(i+1,len1):
-            try:
-                isbond = mgBond.CovalentBond.is_bonded(linker[i],linker[j])
-            except:
-                isbond = False
-            if isbond:
-                bond_array[i,j] = 1
-                bond_array[j,i] = 1          
-            else:
-                bond_array[i,j] = 0
-    cluster_assignment_linker = connected_components(bond_array)   
-
+    
+    cluster_assignment_linker = cluster_assginemnt(linker,len1)
     # array for linker: linker atom can only coord to one metal
     coord_bond_array = np.full(len1, np.nan)
     # dict for metal: one metal can have multiple coord atom
@@ -85,7 +91,8 @@ def StructureAnalysis(linker, metal):
     use the "max-void algorithm" to define.
     """
     pbc_linker = np.full((len1,3), ['no_pbc','no_pbc','no_pbc'])
-    
+    pbc_setting = [(False,True,True),(True,False,True),(True,True,False)]
+
     for i in range(cluster_assignment_linker[0]):
         linker_coords = []
         indexes = np.where(cluster_assignment_linker[1]==i)[0]
@@ -93,26 +100,24 @@ def StructureAnalysis(linker, metal):
             # append index to the end of the frac_coords
             linker_coords.append( np.append(linker[index].frac_coords,int(index)))
         linker_coords = np.array(linker_coords)
+
         for axis in range(3):
-            linker_coords = linker_coords[linker_coords[:,axis].argsort()]
-            cluster = DBSCAN(eps =0.1).fit(linker_coords[:,axis].reshape(-1,1))
-            if max(cluster.labels_) == 0:
-                break
-            elif max(cluster.labels_) == 1:
-                cluster1 = np.array([linker_coords[_index_] for _index_,ele in enumerate(cluster.labels_) if ele == 0])
-                cluster2 = np.array([linker_coords[_index_] for _index_,ele in enumerate(cluster.labels_) if ele == 1])
-                if np.mean(cluster1[:,axis]) > np.mean(cluster2[:,axis]):
-                    for ele in cluster1:
-                        pbc_linker[int(ele[-1])] = 'large'
-                    for ele in cluster2:
-                        pbc_linker[int(ele[-1])] = 'small'
-                else:
-                    for ele in cluster1:
-                        pbc_linker[int(ele[-1])] = 'small'
-                    for ele in cluster2:
-                        pbc_linker[int(ele[-1])] = 'large'                    
-            else:
-                print("pbc error please check linker pbc")
+            working_linker = mgStructure.Structure.from_sites([linker[_index_] for _index_ in indexes])
+            working_linker._lattice._pbc = pbc_setting[axis]
+            cluster_assignment_pbc = cluster_assginemnt(working_linker,len(working_linker))
+            working_linker._lattice._pbc = (True,True,True)
+            if cluster_assignment_pbc[0] > 1:
+                for iii in range(cluster_assignment_pbc[0]):
+                    indexes_cluster = np.where(cluster_assignment_pbc[1]==iii)[0]
+                    cluster_min = np.min([ working_linker[_index_cluster_].frac_coords[axis] for _index_cluster_ in indexes_cluster],axis=0)
+                    cluster_max = np.max([ working_linker[_index_cluster_].frac_coords[axis] for _index_cluster_ in indexes_cluster],axis=0)
+                    if cluster_min > (1-cluster_max):
+                        for xx in indexes_cluster:
+                            pbc_linker[indexes[xx]][axis] = 'large'
+                    else:
+                        for xx in indexes_cluster:
+                            pbc_linker[indexes[xx]][axis] = 'small'
+                        
 
     pbc_metal = np.full((len2,3), ['no_pbc','no_pbc','no_pbc'])
     
@@ -125,22 +130,35 @@ def StructureAnalysis(linker, metal):
         metal_coords = np.array(metal_coords)
         for axis in range(3):
             metal_coords = metal_coords[metal_coords[:,axis].argsort()]
-            cluster = DBSCAN(eps =0.1,min_samples=1).fit(metal_coords[:,axis].reshape(-1,1))
-            if max(cluster.labels_) == 0:
+            if len(metal_coords) == 2:
+                class temp_class(object):
+                    pass
+                cluster, clusters_count = temp_class(), {}
+                if abs(metal_coords[0,axis] - metal_coords[1,axis]) > 0.5:
+                    cluster.labels_ = [0,1]
+                    clusters_count[0],clusters_count[1] = 1,1
+                else:
+                    cluster.labels_ = [0,0]
+                    clusters_count[0] = 2
+            else:
+                cluster = DBSCAN(eps = float(3/linker.lattice.abc[axis]),metric='euclidean').fit(metal_coords[:,axis].reshape(-1,1))
+                clusters_count = Counter(cluster.labels_)
+            if len(clusters_count) == 1:
                 break
-            elif max(cluster.labels_) == 1:
-                cluster1 = np.array([metal_coords[_index_] for _index_,ele in enumerate(cluster.labels_) if ele == 0])
-                cluster2 = np.array([metal_coords[_index_] for _index_,ele in enumerate(cluster.labels_) if ele == 1])
+            elif len(clusters_count) == 2:
+                type1, type2 = list(clusters_count.keys())[0],list(clusters_count.keys())[1]
+                cluster1 = np.array([metal_coords[_index_] for _index_,ele in enumerate(cluster.labels_) if ele == type1])
+                cluster2 = np.array([metal_coords[_index_] for _index_,ele in enumerate(cluster.labels_) if ele == type2])
                 if np.mean(cluster1[:,axis]) > np.mean(cluster2[:,axis]):
                     for ele in cluster1:
-                        pbc_metal[int(ele[-1])] = 'large'
+                        pbc_metal[int(ele[-1])][axis] = 'large'
                     for ele in cluster2:
-                        pbc_metal[int(ele[-1])] = 'small'
+                        pbc_metal[int(ele[-1])][axis] = 'small'
                 else:
                     for ele in cluster1:
-                        pbc_metal[int(ele[-1])] = 'small'
+                        pbc_metal[int(ele[-1])][axis] = 'small'
                     for ele in cluster2:
-                        pbc_metal[int(ele[-1])] = 'large'                    
+                        pbc_metal[int(ele[-1])][axis] = 'large'                    
             else:
                 print("pbc error please check metal pbc")
 
@@ -154,74 +172,62 @@ def NbMAna(mof, deleted_linker, _index_linker_):
         return the metal-coordLinker-Linker1stneighour pair(three components!) 
     
     return varibles:
-        metal_dict_sitebased: fixed_id:site
-        MCA_dict_notuniqueid: metal_cluster_num: site
-        metal_coord_dict_sitebased: fixed_id:[ (fixed_id, coord sites)]
-        metal_coord_neighbour_dict_sitebased: fixed_id: [fixed_id, bonded_sites]
-        dist_metal_cluster: dist array between metal clusters
-        index_fixed_id_dict : dict from fixed_id to index
+    linker_coord_list : (type, coord_linker, coord_linker_neighbour, metal)
 
     """
-
-    # initiate the return varibles
-    metal_dict_sitebased = {}
-    metal_coord_dict_sitebased = {}
-    metal_coord_neighbour_dict_sitebased = {}
-    # fetch the the current index (Compared to the fixed id )
-    index_fixed_id_dict = {}
-    for i, s in enumerate(mof):
-        index_fixed_id_dict[s.fixed_id] = i
-
-    # construct metal - coord dict first
+    fixed_id = [x.fixed_id for x in mof]
+    linker_coord_list = []
+    coord_atom_linker = []
     for index in _index_linker_:
         if ~np.isnan(deleted_linker[index].NbM):
-            metal_fixed_id = deleted_linker[index].NbM
-            if metal_fixed_id not in metal_dict_sitebased.keys():
-                metal_dict_sitebased[metal_fixed_id] = mof[index_fixed_id_dict[metal_fixed_id]]
-                metal_coord_dict_sitebased[metal_fixed_id] = [] 
-                metal_coord_dict_sitebased[metal_fixed_id].append( (deleted_linker[index].fixed_id, deleted_linker[index]))
-        else:
+            coord_atom_linker.append(index)
+    
+    childs = {}
+    for i in range(len(coord_atom_linker)):
+        try:
+            loc_env = CrystalNN()
+            child = loc_env.get_nn_info(deleted_linker,coord_atom_linker[i])
+            childs[i] = child
+        except:
+            loc_env = BrunnerNN_real()
+            child = loc_env.get_nn_info(deleted_linker,coord_atom_linker[i])
+            childs[i] = child
+    
+    visited = [0]*len(coord_atom_linker)
+    for i in range(len(coord_atom_linker)):
+        if visited [i] == 1:
             continue
-    
-    # based on metal - coord dict, construct coord-neighbour dict 
-    for item in metal_coord_dict_sitebased.items():
-        coord_index, coord_atoms = item[0], item[1]
-        for atom in coord_atoms:
-            for _i in _index_linker_:
-                try: 
-                    isbond = mgBond.CovalentBond.is_bonded(atom[1], deleted_linker[_i])
-                except:
-                    isbond = False
-                if isbond and deleted_linker[_i].fixed_id!=atom[0]:
-                    if atom[0] not in metal_coord_neighbour_dict_sitebased.keys():
-                        metal_coord_neighbour_dict_sitebased[atom[0]] = []
-                        metal_coord_neighbour_dict_sitebased[atom[0]].append((_i,atom[1].distance(deleted_linker[_i])))
-                    else:
-                        metal_coord_neighbour_dict_sitebased[atom[0]].append((_i,atom[1].distance(deleted_linker[_i])))
-
-    # a very naive way to calculate the min dist between two metal cluster:
-    # TODO: could combined with code above 
-    associated_NbM = [ deleted_linker[s].NbM for s in _index_linker_]
-    coord_metal_index = np.array([i for i,s in enumerate(mof) if s.fixed_id in associated_NbM])
-    MCA_dict_notuniqueid = {}
-    for index in coord_metal_index:
-        if mof[index].MCA not in MCA_dict_notuniqueid.keys():
-            MCA_dict_notuniqueid[ mof[index].MCA] = []
-            MCA_dict_notuniqueid[ mof[index].MCA].append( (mof[index].fixed_id, mof[index]))
+        common_list = []
+        child_1 = [x['site_index'] for x in childs[i]]
+        for j in range(i+1,len(coord_atom_linker)):
+            if visited[j] == 1 :
+                continue
+            
+            child_2 = [x['site_index'] for x in childs[j]]
+            if len(list( set(child_1).intersection(child_2))) == 0 :
+                continue
+            else:
+                common_list = list( set(child_1).intersection(child_2))
+                pairs = [deleted_linker[coord_atom_linker[i]],deleted_linker[coord_atom_linker[j]]]
+                metal_1 = mof[ [ii for ii,x in enumerate(fixed_id) if x==int(deleted_linker[coord_atom_linker[i]].NbM)][0]]
+                metal_2 = mof[ [ii for ii,x in enumerate(fixed_id) if x==int(deleted_linker[coord_atom_linker[j]].NbM)][0]]
+                metal = [metal_1, metal_2]
+                visited[j] = 1
+        
+        if len(common_list) == 1 and deleted_linker[coord_atom_linker[i]].species_string == 'O' and deleted_linker[coord_atom_linker[j]].species_string == 'O':
+            linker_coord_list.append(('OO',pairs, deleted_linker[common_list[0]], metal ))
+                # raise("local coordination env error")
         else:
-            MCA_dict_notuniqueid[ mof[index].MCA].append( (mof[index].fixed_id, mof[index]))
-    num_metal_cluster = len(MCA_dict_notuniqueid)
-    dist_metal_cluster = np.ones((num_metal_cluster,num_metal_cluster))*100
-    for ii,key1 in enumerate(MCA_dict_notuniqueid.keys()):
-        for jj,key2 in enumerate(MCA_dict_notuniqueid.keys()):
-            x, y = MCA_dict_notuniqueid[key1], MCA_dict_notuniqueid[key2]
-            for _x in x:
-                for _y in y:
-                    _dist_ = _x[1].distance(_y[1])
-                    if _dist_ < dist_metal_cluster [ii,jj] and ii!=jj:
-                        dist_metal_cluster [ii,jj] = _dist_
-    
-    return metal_dict_sitebased, MCA_dict_notuniqueid, metal_coord_dict_sitebased, metal_coord_neighbour_dict_sitebased, dist_metal_cluster, index_fixed_id_dict
+            metal = mof[ [ii for ii,x in enumerate(fixed_id) if x==int(deleted_linker[coord_atom_linker[i]].NbM)][0]]
+            if deleted_linker[coord_atom_linker[i]].species_string == 'N':
+                linker_coord_list.append(('N',deleted_linker[coord_atom_linker[i]], [ deleted_linker[_index_] for _index_ in child_1], metal ))
+            elif deleted_linker[coord_atom_linker[i]].species_string == 'O':
+                linker_coord_list.append(('O',deleted_linker[coord_atom_linker[i]], [ deleted_linker[_index_] for _index_ in child_1], metal ))
+            else:
+                raise("local coordination env error")
+        visited[i] = 1
+     
+    return linker_coord_list
 
 def WarrenCowleyParameter(neighbor_list, center_atom, noncenter_atom):
     '''
@@ -283,95 +289,103 @@ def WriteStructure(output_dir, structure, name = 'POSCAR', sort = True):
     
     return
 
-def addOH(metal_dict_sitebased, metal_coord_dict_sitebased,metal_coord_neighbour_dict_sitebased):
+def addOH(coord_linker, coord_linker_neighbour, metal):
 
-    M_O = metal_coord_dict_sitebased[1].frac_coords - metal_dict_sitebased.frac_coords
+    if len(coord_linker_neighbour)==0:
+        print('neighbour error, Cl added')
+        O_site = copy.deepcopy(coord_linker)
+        O_site.species = 'Cl'
+        return [O_site]
+
+    M_O = coord_linker.frac_coords - metal.frac_coords
     N_O,N_O_dist = [],[]
-    for site in metal_coord_neighbour_dict_sitebased:
-        _pos_diff_ = site.frac_coords - metal_coord_dict_sitebased[1].frac_coords
+    for site in coord_linker_neighbour:
+        _pos_diff_ = site.frac_coords - coord_linker.frac_coords
 
         N_O.append(PosDiffAdjust(_pos_diff_))
-        N_O_dist.append(site.distance(metal_coord_dict_sitebased[1]))
+        N_O_dist.append(site.distance(coord_linker))
 
    
-    O_coords = metal_dict_sitebased.frac_coords + M_O
-    O_site = copy.deepcopy(metal_coord_dict_sitebased[1])
+    O_coords = metal.frac_coords + M_O
+    O_site = copy.deepcopy(coord_linker)
     O_site.species, O_site.frac_coords = 'O', O_coords
 
     O_H_bond_length =  0.97856
-    H_coords1 = metal_coord_dict_sitebased[1].frac_coords + O_H_bond_length/N_O_dist[0]*N_O[0]
-    H_sites1 = copy.deepcopy(metal_coord_neighbour_dict_sitebased[0])
+    H_coords1 = coord_linker.frac_coords + O_H_bond_length/N_O_dist[0]*N_O[0]
+    H_sites1 = copy.deepcopy(coord_linker_neighbour[0])
     H_sites1.species, H_sites1.frac_coords = 'H', H_coords1
 
     return [O_site, H_sites1]
 
 
-def addH2O(metal_dict_sitebased, metal_coord_dict_sitebased,metal_coord_neighbour_dict_sitebased):
+def addH2O(coord_linker, coord_linker_neighbour, metal):
 
-    M_O = metal_coord_dict_sitebased[1].frac_coords - metal_dict_sitebased.frac_coords
+    M_O = coord_linker.frac_coords - metal.frac_coords
     N_O,N_O_dist = [],[]
-    for site in metal_coord_neighbour_dict_sitebased:
-        _pos_diff_ = site.frac_coords - metal_coord_dict_sitebased[1].frac_coords
+    for site in coord_linker_neighbour:
+        _pos_diff_ = site.frac_coords - coord_linker.frac_coords
 
         N_O.append(PosDiffAdjust(_pos_diff_))
-        N_O_dist.append(site.distance(metal_coord_dict_sitebased[1]))
+        N_O_dist.append(site.distance(coord_linker))
 
-    O_M_bond_length = 2.1365
-    O_coords = metal_dict_sitebased.frac_coords + M_O
-    O_site = copy.deepcopy(metal_coord_dict_sitebased[1])
+
+    if len(N_O_dist) == 1:
+        N_O.append(N_O[0]-2*(N_O[0] - np.dot(M_O,N_O[0])/np.dot(M_O,M_O)*M_O ))
+        N_O_dist.append(N_O_dist[0])
+
+
+    O_coords = metal.frac_coords + M_O
+    O_site = copy.deepcopy(metal)
     O_site.species, O_site.frac_coords = 'O', O_coords
 
     O_H_bond_length =  0.97856
-    H_coords1 = metal_coord_dict_sitebased[1].frac_coords + O_H_bond_length/N_O_dist[0]*N_O[0]
-    H_sites1 = copy.deepcopy(metal_coord_neighbour_dict_sitebased[0])
+    H_coords1 = coord_linker.frac_coords + O_H_bond_length/N_O_dist[0]*N_O[0]
+    H_sites1 = copy.deepcopy(metal)
     H_sites1.species, H_sites1.frac_coords = 'H', H_coords1
 
-    H_coords2 = metal_coord_dict_sitebased[1].frac_coords + O_H_bond_length/N_O_dist[1]*N_O[1]
-    H_sites2 = copy.deepcopy(metal_coord_neighbour_dict_sitebased[1])
+    H_coords2 = coord_linker.frac_coords + O_H_bond_length/N_O_dist[1]*N_O[1]
+    H_sites2 = copy.deepcopy(metal)
     H_sites2.species, H_sites2.frac_coords = 'H', H_coords2
 
     return [O_site, H_sites1, H_sites2]
     # rescale the bond length : currently based on Zn-O
 
 
-def addHOHOH(metals, coord_atom):
+def addHOHOH(coord_linker, coord_linker_neighbour, metals):
 
-    if len(coord_atom[0])!=1 or len(coord_atom[1])!=1:
-        print("ERROR: for HOHOH, not unique coord O, nothing added")
-        return []
+    site_O1 = coord_linker[0]
+    site_O2 = coord_linker[1]
 
-    site_O1 = coord_atom[0][0]
-    site_O2 = coord_atom[1][0]
-
-    O_M1 = PosDiffAdjust(coord_atom[0][0][1].frac_coords - metals[0].frac_coords)
-    O_M2 = PosDiffAdjust(coord_atom[1][0][1].frac_coords - metals[1].frac_coords)
-    site_O1[1].frac_coords = metals[0].frac_coords + O_M1
-    site_O2[1].frac_coords = metals[1].frac_coords + O_M2
-    _dumb_site_= copy.deepcopy(site_O1)[1]
+    O_M1 = PosDiffAdjust(coord_linker[0].frac_coords - metals[0].frac_coords)
+    O_M2 = PosDiffAdjust(coord_linker[1].frac_coords - metals[1].frac_coords)
+    site_O1.frac_coords = metals[0].frac_coords + O_M1
+    site_O2.frac_coords = metals[1].frac_coords + O_M2
+    _dumb_site_= copy.deepcopy(site_O1)
     _dumb_site_.frac_coords = O_M1 + O_M2
     
     M_mid_v = PosDiffAdjust(metals[0].frac_coords - metals[1].frac_coords)/2
 
     length_M_H_mid = 2.638178855934525
-    H_mid = copy.deepcopy(site_O1)[1]
+    H_mid = copy.deepcopy(site_O1)
     H_mid.species, H_mid.frac_coords = 'H', metals[1].frac_coords+ M_mid_v + length_M_H_mid/np.sqrt(sum(_dumb_site_.coords**2))*(O_M1 + O_M2)
 
     OH_length = 0.97
-    H_left = copy.deepcopy(site_O1)[1]
-    vector = PosDiffAdjust(H_mid.frac_coords - site_O1[1].frac_coords)
-    norm_vector = site_O1[1].distance(H_mid)
-    H_left.species, H_left.frac_coords = 'H', site_O2[1].frac_coords  + 0.97/norm_vector*vector
+    H_left = copy.deepcopy(site_O1)
+    vector = PosDiffAdjust(H_mid.frac_coords - site_O1.frac_coords)
+    norm_vector = site_O1.distance(H_mid)
+    H_left.species, H_left.frac_coords = 'H', site_O2.frac_coords  + OH_length/norm_vector*vector
 
-    H_right = copy.deepcopy(site_O2)[1]
-    vector = PosDiffAdjust(H_mid.frac_coords - site_O2[1].frac_coords)
-    norm_vector = site_O2[1].distance(H_mid)
-    H_right.species, H_right.frac_coords = 'H', site_O1[1].frac_coords  + 0.97/norm_vector*vector
+    H_right = copy.deepcopy(site_O2)
+    vector = PosDiffAdjust(H_mid.frac_coords - site_O2.frac_coords)
+    norm_vector = site_O2.distance(H_mid)
+    H_right.species, H_right.frac_coords = 'H', site_O1.frac_coords  + OH_length/norm_vector*vector
 
-
-
-    return [site_O1[1], site_O2[1], H_mid, H_left, H_right]
+    return [site_O1, site_O2, H_mid, H_left, H_right]
     # rescale the bond length : currently based on Zn-O
 
+def addX():
+
+    return
 
 def DebugVisualization(vis_structure):
         vis = StructureVis()
@@ -445,6 +459,8 @@ def merge_sites(structure, tol: float = 0.01, mode = 'delete') -> None:
             offset = structure[i].frac_coords - coords
             coords = coords + ((offset - np.round(offset)) / (n + 2)).astype(coords.dtype)
             for key in props:
+                if key =='pbc_custom':
+                    continue
                 if props[key] is not None and structure[i].properties[key] != props[key]:
                     if mode.lower()[0] == "a" and isinstance(props[key], float):
                         # update a running total

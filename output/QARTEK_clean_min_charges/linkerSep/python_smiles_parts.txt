@@ -1,0 +1,2 @@
+node	Cl[Cd]
+linker	Fc1ccc(cc1)n1cc(C(=O)[O-])c(=O)c2c1cc(N1CCNCC1)c(c2)F

@@ -1,0 +1,2 @@
+node	[Zn][OH]([Zn][OH]([Zn])[Zn])[Zn]
+linker	[O-]C(=O)c1ccc(cc1)[Si](c1ccc(cc1)C(=O)[O-])(c1ccc(cc1)C(=O)[O-])c1ccc(cc1)C(=O)[O-]

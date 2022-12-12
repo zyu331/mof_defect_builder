@@ -1,0 +1,1 @@
+[Cu][Cu].[S]C#N.c1ccc(cn1)OCC(COc1cccnc1)(COc1cccnc1)COc1cccnc1 MOFid-v1.ERROR.cat0;CIGYAU_clean_min_charges

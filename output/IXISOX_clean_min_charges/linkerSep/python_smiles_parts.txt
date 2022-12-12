@@ -1,0 +1,4 @@
+node	I[Cu]I
+node	[Cu]
+node	[Cu]I
+linker	C1Cc2nnc3c4c2c(C1)nnc4CCC3

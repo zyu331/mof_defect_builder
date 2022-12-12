@@ -1,0 +1,3 @@
+MWVTWFVJZLCBMC-UHFFFAOYSA-N	2	8	InChI=1S/C10H8N2/c1-5-11-6-2-9(1)10-3-7-12-8-4-10/h1-8H	MWVTWFVJZLCBMC	n1ccc(cc1)c1ccncc1	[n]1[cH][cH][c]([cH][cH]1)[c]1[cH][cH][n][cH][cH]1
+KBZFDRWPMZESDI-UHFFFAOYSA-L	3	8	InChI=1S/C8H7NO4/c9-6-2-4(7(10)11)1-5(3-6)8(12)13/h1-3H,9H2,(H,10,11)(H,12,13)/p-2	KBZFDRWPMZESDI	Nc1cc(cc(c1)C(=O)[O-])C(=O)[O-]	N[c]1[cH][c]([cH][c]([cH]1)[C]([O])[O-])[C]([O])[O-]
+

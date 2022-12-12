@@ -1,0 +1,2 @@
+node	[Ga]
+linker	[O]P(=O)([O])[O]

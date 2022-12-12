@@ -1,0 +1,4 @@
+node	O[Al][OH][Al][OH][Al]O
+node	[Al]
+node	[OH]
+linker	[O-]C(=O)c1ccc(cc1)C(=O)[O-]

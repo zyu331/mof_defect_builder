@@ -1,0 +1,2 @@
+node	[Cd]
+linker	[C]#N

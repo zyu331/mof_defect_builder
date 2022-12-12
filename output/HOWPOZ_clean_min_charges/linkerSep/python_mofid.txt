@@ -1,0 +1,1 @@
+C1N2CN3CN1CN(C2)C3.[Cd].[O-]C(=O)c1cnccc1C(=O)[O-] MOFid-v1.UNKNOWN.cat0;HOWPOZ_clean_min_charges

@@ -1,0 +1,3 @@
+node	Cl[Cd]
+node	Cl[Cd](Cl)Cl
+linker	CN(C1=N[P](N=C([N]1)N(C)C)(Oc1ccncc1)Oc1ccncc1)C

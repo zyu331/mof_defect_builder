@@ -1,0 +1,2 @@
+PVNIIMVLHYAWGP-UHFFFAOYSA-M	2	16	InChI=1S/C6H5NO2/c8-6(9)5-2-1-3-7-4-5/h1-4H,(H,8,9)/p-1	PVNIIMVLHYAWGP	[O-]C(=O)c1cccnc1	[O-][C]([c]1[cH][cH][cH][n][cH]1)[O]
+

@@ -1,0 +1,4 @@
+node	F[Ga]
+node	F[Ga]F
+node	[Ga]
+linker	[O]P(=O)(CCP(=O)([O])[O])[O]

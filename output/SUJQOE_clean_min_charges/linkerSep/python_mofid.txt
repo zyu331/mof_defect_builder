@@ -1,0 +1,1 @@
+[O-]C(=O)C=CC=CC(=O)[O-].[O-]C(=O)[CH]C=C[CH]C(=O)[O-].[Zn].n1ccc(cc1)C=Cc1ccncc1 MOFid-v1.pcu.cat1;SUJQOE_clean_min_charges

@@ -1,0 +1,1 @@
+NC(C([S])(C)C)C(=O)[O-].[Au].[Pt].[Zn] MOFid-v1.pth.cat0;RUCGOM_clean_min_charges

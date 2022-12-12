@@ -1,0 +1,1 @@
+[N]1C=NN=C1.[O-]C(=O)c1cc(ccc1C(=O)[O-])C(=O)[O-].[Zn] MOFid-v1.UNKNOWN.cat0;LADHEF_clean_min_charges

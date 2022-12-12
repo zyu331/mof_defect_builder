@@ -1,0 +1,1 @@
+CC(C1=Nc2c([N]1)ccc(c2)C(=O)[O-])O.[Zn][OH][Zn][OH][Zn] MOFid-v1.ant.cat0;BENXUP_clean_min_charges

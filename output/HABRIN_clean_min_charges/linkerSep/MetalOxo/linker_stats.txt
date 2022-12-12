@@ -1,0 +1,3 @@
+KKEYFWRCBNTPAC-UHFFFAOYSA-L	2	4	InChI=1S/C8H6O4/c9-7(10)5-1-2-6(4-3-5)8(11)12/h1-4H,(H,9,10)(H,11,12)/p-2	KKEYFWRCBNTPAC	[O-]C(=O)c1ccc(cc1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[O]
+AWZHSIJOWFAISU-UHFFFAOYSA-N	4	4	InChI=1S/C12H12BN8/c1-5-18(9-14-1)13(19-6-2-15-10-19,20-7-3-16-11-20)21-8-4-17-12-21/h1-12H	AWZHSIJOWFAISU	c1ncn(c1)[B](n1cncc1)(n1cncc1)n1cncc1	[cH]1[n][cH]n([cH]1)[B](n1[cH][n][cH][cH]1)(n1[cH][n][cH][cH]1)n1[cH][n][cH][cH]1
+

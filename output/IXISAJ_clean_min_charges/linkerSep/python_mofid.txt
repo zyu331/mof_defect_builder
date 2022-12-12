@@ -1,0 +1,1 @@
+Br[Cu]Br.C1Cc2nnc3c4c2c(C1)nnc4CCC3.[Cu].[Cu]Br MOFid-v1.ERROR.cat0;IXISAJ_clean_min_charges

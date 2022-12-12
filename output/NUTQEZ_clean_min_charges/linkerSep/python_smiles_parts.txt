@@ -1,0 +1,4 @@
+node	[Cu][Cu]
+linker	[C]c1cc(cc(c1)C(=O)[O-])C(=O)[O-]
+linker	[O-]C(=O)[C]=C[C]C=[C]C(=O)[O-]
+linker	[O-]C(=O)c1cc(C#Cc2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-]

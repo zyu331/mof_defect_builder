@@ -1,0 +1,1 @@
+[C]#N.[Fe].[Pt].n1ccncc1 MOFid-v1.fsc.cat0;RURPEA_clean_min_charges

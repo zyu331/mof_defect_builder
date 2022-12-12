@@ -1,0 +1,1 @@
+FC1=[C]C(=C(C(=C1F)C(=O)[O-])F)F.F[C][C][C](C(=C([C]F)F)[O])F.Fc1c([O])c(F)c(c(c1F)C(=O)[O-])F.[O-][C]=O.[O][Zn].[Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.UNKNOWN.cat0;RACZIG_clean_min_charges

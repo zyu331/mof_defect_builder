@@ -1,0 +1,1 @@
+[Cu].[O]P(=O)(CCCCP(=O)([O])[O])[O] MOFid-v1.scu,UNKNOWN.cat0;AHOKIR01_clean_min_charges

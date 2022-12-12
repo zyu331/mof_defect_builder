@@ -1,0 +1,6 @@
+node	[La]
+node	[O][La]
+linker	O=[C]C12[BH]3[BH]4BBB2[BH]2[BH]1BB[BH]3C42C(=O)[O-]
+linker	[O-]C(=O)C12[BH]3BB[BH]4[BH]2[BH]([BH]1[BH])C4(BB3)C(=O)[O-]
+linker	[O-]C(=O)C12[BH]3[BH]4BB[BH]2[BH]2[BH]1BB[BH]3C42C(=O)[O-]
+linker	[O][C](C12[BH]3[BH]2[BH]2[BH]1BB[BH]1C2([BH]3BB1)C(=O)[O-])[O]

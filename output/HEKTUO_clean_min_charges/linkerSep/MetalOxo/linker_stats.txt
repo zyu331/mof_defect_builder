@@ -1,0 +1,2 @@
+LQEZHWGJSWHXPJ-UHFFFAOYSA-K	6	16	InChI=1S/C15H10O6/c16-13(17)9-3-1-8(2-4-9)10-5-11(14(18)19)7-12(6-10)15(20)21/h1-7H,(H,16,17)(H,18,19)(H,20,21)/p-3	LQEZHWGJSWHXPJ	[O-]C(=O)c1ccc(cc1)c1cc(cc(c1)C(=O)[O-])C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[c]1[cH][c]([cH][c]([cH]1)[C]([O])[O-])[C]([O])[O-])[O]
+

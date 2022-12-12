@@ -1,0 +1,1 @@
+N1=NC=C([CH]1)C1=CN=N[CH]1.N1=NC=C([CH]1)C1=C[N]N=C1.[Cd] MOFid-v1.uog.cat0;GAYFUJ_clean_min_charges

@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(nc1)c1ccc(cn1)C(=O)[O-].[Zn][Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.pcu.cat1;FEFDAX_clean_min_charges

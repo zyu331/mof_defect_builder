@@ -1,0 +1,2 @@
+node	[Sc][O]([Sc])[Sc]
+linker	[O-]C(=O)c1ccc(cc1)C(=O)[O-]

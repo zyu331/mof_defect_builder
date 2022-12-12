@@ -1,0 +1,2 @@
+node	[Ag][Ag]
+linker	CSc1c(C(=O)[O-])c(SC)c(c(c1SC)C(=O)[O-])SC

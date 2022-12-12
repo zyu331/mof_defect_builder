@@ -1,0 +1,2 @@
+node	[Ca]
+linker	OC(=O)CCC(P(=O)([O])[O])(C(=O)O)CC(=O)O

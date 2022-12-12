@@ -1,0 +1,1 @@
+[N]1[CH][CH][C]([CH][CH]1)c1ccncc1.[O-]C(=O)c1cccc(c1c1c(cccc1C(=O)[O-])C(=O)[O-])C(=O)[O-].[Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.UNKNOWN.cat0;UBACOR_clean_min_charges

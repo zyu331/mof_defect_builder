@@ -1,0 +1,1 @@
+N#CC(C(c1ccc(cc1)[C](C#N)C#N)(C#N)C#N)(c1ccc(cc1)[C](C#N)C#N)C#N.[CH]1N=C[CH][C]([CH]1)c1ccncc1.[N]1[CH][CH]C(=C[CH]1)c1ccncc1.[Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.UNKNOWN.cat0;HIMSAY_clean_min_charges

@@ -1,0 +1,1 @@
+F[Zn]F.[N]=CC=NC=[CH].[Zn].n1ccncc1 MOFid-v1.ERROR.cat1;FUDQIF_clean_min_charges

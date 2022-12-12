@@ -33,5 +33,5 @@ loop_
     _geom_bond_distance
     _geom_bond_site_symmetry_2
     _ccdc_geom_bond_type
-    Zn7    Zn0       2.75845      .   S
-    Zn3    Zn4       2.75618      .   S
+    Zn7    Zn0       2.75849      .   S
+    Zn3    Zn4       2.75623      .   S

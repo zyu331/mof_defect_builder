@@ -1,0 +1,2 @@
+node	[Y]
+linker	[O-]C(=O)CN(CP(=O)(O)[O])CC(=O)[O-]

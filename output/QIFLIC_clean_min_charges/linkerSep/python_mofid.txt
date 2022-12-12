@@ -1,0 +1,1 @@
+NC1=NN=C[N]1.[O-]C(=O)C1=CC(=[C]C=C1)C(=O)[O-].[O-]C(=O)C1=CC=[C]C(=C1)C(=O)[O-].[O-]C(=O)c1cccc(c1)C(=O)[O-].[Zn] MOFid-v1.ERROR.cat0;QIFLIC_clean_min_charges

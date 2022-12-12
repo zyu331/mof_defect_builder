@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)c1cccc(c1)C(=O)[O-].[O]N(=O)=O.[Sr] MOFid-v1.ERROR.cat0;EKOPIE_clean_min_charges

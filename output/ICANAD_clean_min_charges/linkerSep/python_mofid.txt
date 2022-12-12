@@ -1,0 +1,1 @@
+NC1=NC(=[N]=C([N]1)N)N.[Ag].[O-]C(=O)CC(=O)[O-].[O-]C(=O)CC12O[Ag]2O1 MOFid-v1.ERROR.cat0;ICANAD_clean_min_charges

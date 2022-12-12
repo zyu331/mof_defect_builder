@@ -1,0 +1,2 @@
+node	[Mo][Mo]
+linker	[O-]C(=O)c1ccncc1

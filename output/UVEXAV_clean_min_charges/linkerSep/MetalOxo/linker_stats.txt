@@ -1,0 +1,7 @@
+NNLWTOYDSVJAHQ-UHFFFAOYSA-L	3	1	InChI=1S/C5H2O4/c6-4(7)2-1-3-5(8)9/h(H,6,7)(H,8,9)/p-2	NNLWTOYDSVJAHQ	[O-]C(=O)[C][C][C]C(=O)[O-]	[O-][C]([C][C][C][C]([O])[O-])[O]
+GPYSMJXCFIYYKS-UHFFFAOYSA-M	3	1	InChI=1S/C5HO4/c1-9-5(8)3-2-4(6)7/h(H,6,7)/p-1	GPYSMJXCFIYYKS	[O-]C(=O)[C]=[C]C(=O)O[C]	[O-][C]([C][C][C](O[C])[O])[O]
+CYIDZMCFTVVTJO-UHFFFAOYSA-J	8	3	InChI=1S/C10H6O8/c11-7(12)3-1-4(8(13)14)6(10(17)18)2-5(3)9(15)16/h1-2H,(H,11,12)(H,13,14)(H,15,16)(H,17,18)/p-4	CYIDZMCFTVVTJO	[O-]C(=O)c1cc(C(=O)[O-])c(cc1C(=O)[O-])C(=O)[O-]	[O-][C]([c]1[cH][c]([C]([O])[O-])[c]([cH][c]1[C]([O])[O-])[C]([O])[O-])[O]
+SDELUCGOLGXTTI-UHFFFAOYSA-K	8	1	InChI=1S/C11H5O8/c1-11(18,19)7-3-5(9(14)15)4(8(12)13)2-6(7)10(16)17/h2-3H,(H,12,13)(H,14,15)(H,16,17)/p-3	SDELUCGOLGXTTI	[O-]C(=O)c1cc(c(cc1C(=O)[O-])C(=O)[O-])C([O])([O])[C]	[O-][C]([c]1[cH][c]([c]([cH][c]1[C]([O])[O-])[C]([O])[O-])C([O])([O])[C])[O]
+BPWDIWNRJCHQNC-UHFFFAOYSA-J	8	2	InChI=1S/C10H5O8/c11-7(12)3-1-4(8(13)14)6(10(17)18)2-5(3)9(15)16/h1H,(H,11,12)(H,13,14)(H,15,16)(H,17,18)/p-4	BPWDIWNRJCHQNC	[O-]C(=O)C1=CC(=C([C]=C1C(=O)[O-])C(=O)[O-])C(=O)[O-]	[O-][C]([C]1[CH][C]([C]([O])[O-])[C]([C][C]1[C]([O])[O-])[C]([O])[O-])[O]
+GXDQWSRKPMRPMV-UHFFFAOYSA-J	8	1	InChI=1S/C9H5O8/c10-6(11)2-4(8(14)15)1-5(9(16)17)3-7(12)13/h1H,(H,10,11)(H,12,13)(H,14,15)(H,16,17)/p-4	GXDQWSRKPMRPMV	[O-]C(=O)[C]C(=CC(=[C]C(=O)[O-])C(=O)[O-])C(=O)[O-]	[O-][C]([C]([C][C]([O])[O-])[CH][C]([C]([O])[O-])[C][C]([O])[O-])[O]
+

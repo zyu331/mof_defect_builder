@@ -1,0 +1,2 @@
+PHQYMDAUTAXXFZ-UHFFFAOYSA-L	4	12	InChI=1S/C17H10F6O4/c18-16(19,20)15(17(21,22)23,11-5-1-9(2-6-11)13(24)25)12-7-3-10(4-8-12)14(26)27/h1-8H,(H,24,25)(H,26,27)/p-2	PHQYMDAUTAXXFZ	[O-]C(=O)c1ccc(cc1)C(C(F)(F)F)(C(F)(F)F)c1ccc(cc1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)C(C(F)(F)F)(C(F)(F)F)[c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[O]
+

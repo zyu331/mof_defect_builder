@@ -1,0 +1,1 @@
+[O-]C(=O)CCCCCCC(=O)[O-].[Zn].c1ncn(c1)CCn1cncc1 MOFid-v1.dia.cat0;PAMVEG_clean_min_charges

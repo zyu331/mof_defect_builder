@@ -1,0 +1,2 @@
+node	[Cu]
+linker	[O]P(=O)(CCCCP(=O)([O])[O])[O]

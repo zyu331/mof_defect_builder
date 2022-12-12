@@ -1,0 +1,1 @@
+[Ba].[O-]C(=O)C(=O)[O-] MOFid-v1.UNKNOWN.cat0;BALMUW_clean_min_charges

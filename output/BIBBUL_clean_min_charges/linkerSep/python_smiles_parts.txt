@@ -1,0 +1,3 @@
+node	[Zn]
+linker	Cc1nccn1CCCCn1ccnc1C
+linker	[O-]C(=O)c1cccnc1c1ncccc1C(=O)[O-]

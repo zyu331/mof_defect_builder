@@ -1,0 +1,2 @@
+KKEYFWRCBNTPAC-UHFFFAOYSA-L	3	8	InChI=1S/C8H6O4/c9-7(10)5-1-2-6(4-3-5)8(11)12/h1-4H,(H,9,10)(H,11,12)/p-2	KKEYFWRCBNTPAC	[O-]C(=O)c1ccc(cc1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[O]
+

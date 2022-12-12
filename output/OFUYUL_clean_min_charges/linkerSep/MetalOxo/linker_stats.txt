@@ -1,0 +1,2 @@
+ICEVFQOZZHEGNM-UHFFFAOYSA-L	4	8	InChI=1S/C8H5O5/c9-6-2-4(7(10)11)1-5(3-6)8(12)13/h1-3H,(H,10,11)(H,12,13)/p-2	ICEVFQOZZHEGNM	[O]c1cc(cc(c1)C(=O)[O-])C(=O)[O-]	[O][c]1[cH][c]([cH][c]([cH]1)[C]([O])[O-])[C]([O])[O-]
+

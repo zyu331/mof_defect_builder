@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)CN(c1cc(ccc1C(=O)[O-])C(=O)[O-])CC(=O)[O-].n1ccc(cc1)c1ccncc1 MOFid-v1.ERROR.cat0;NEVJEF_clean_min_charges

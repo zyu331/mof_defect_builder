@@ -1,0 +1,1 @@
+[La].[O]P(=O)(CN1CCN(CC1)CP(=O)([O])[O])[O].[O]P(=O)(C[NH]1CC[NH](CC1)CP(=O)([O])[O])[O] MOFid-v1.htp,UNKNOWN.cat0;CUMDIY_clean_min_charges

@@ -1,0 +1,1 @@
+C(Cn1cncc1)CCn1cncc1.[O-]C(=O)c1cc([N][N]c2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-].[Zn] MOFid-v1.UNKNOWN.cat0;RAXDAX_clean_min_charges

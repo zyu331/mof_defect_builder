@@ -1,0 +1,2 @@
+NEQFBGHQPUXOFH-UHFFFAOYSA-L	2	6	InChI=1S/C14H10O4/c15-13(16)11-5-1-9(2-6-11)10-3-7-12(8-4-10)14(17)18/h1-8H,(H,15,16)(H,17,18)/p-2	NEQFBGHQPUXOFH	[O-]C(=O)c1ccc(cc1)c1ccc(cc1)C(=O)[O-]	[O-][C]([c]1[cH][cH][c]([cH][cH]1)[c]1[cH][cH][c]([cH][cH]1)[C]([O])[O-])[O]
+

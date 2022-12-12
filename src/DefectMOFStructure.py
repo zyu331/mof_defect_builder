@@ -12,6 +12,7 @@ import time
 import copy 
 import random
 import os
+import shutil
 
 from pymatgen.core.lattice import Lattice
 from pymatgen.util.coord import lattice_points_in_supercell
@@ -19,7 +20,7 @@ from pymatgen.core.sites import PeriodicSite, Site
 import pymatgen.core.structure as mgStructure
 from pymatgen.util.coord import all_distances
 
-from src.helper import WarrenCowleyParameter, SwapNeighborList, addOH, addH2O, addHOHOH, WriteStructure, DebugVisualization, merge_sites, NbMAna
+from src.helper import WarrenCowleyParameter, SwapNeighborList, addOH, addH2O, addHOHOH, addX, WriteStructure, DebugVisualization, merge_sites, NbMAna
 from src.cappingAgent import water, water2, dummy, h2ooh, oh
 
 import warnings
@@ -27,7 +28,7 @@ warnings.filterwarnings("ignore", message="Sites with different site property Nb
 
 class DefectMOFStructure():
     
-    def __init__(self, mof, defectConc, numofdefect, linker_type, output_dir, superCell, charge_comp = 0):
+    def __init__(self, mof, defectConc, numofdefect, linker_type, output_dir, superCell, charge_comp, capping_mod = 'OH'):
         
         self.original_mof = mof
         self.defectConc = defectConc
@@ -35,6 +36,7 @@ class DefectMOFStructure():
         self.linker_type = linker_type
         self.charge_comp = charge_comp
         self.output_dir = os.path.join( output_dir , str(self.defectConc)[0:4])
+        self.capping_mod = capping_mod
         if not os.path.isdir( self.output_dir):
             os.mkdir(self.output_dir)
         self.superCell = superCell
@@ -155,9 +157,9 @@ class DefectMOFStructure():
 
         # Preperation 2: check the charge 
         if self.charge_comp != 0:
-            print("You are assuming the deleted linker are NOT chagre neutral")
+            print("Note: The linker has %i net charge"%self.charge_comp)
         else:
-            print("You are assuming the deleted linker IS chagre neutral")
+            print("Note: The linker has ZERO net charge")
 
         # add capping agent
         
@@ -165,65 +167,39 @@ class DefectMOFStructure():
             added_charge = 0
             _index_linker_ = np.array(LCA_dict_notuniqueid[LCA])
 
-            metal_dict_sitebased, MCA_dict_notuniqueid, metal_coord_dict_sitebased, metal_coord_neighbour_dict_sitebased,\
-                 dist_metal_cluster, index_fixed_id_dict = NbMAna(mof, deleted_linker, _index_linker_)
-
-            for metal_cluster, sites in MCA_dict_notuniqueid.items():
+            linker_coord_list = NbMAna(mof, deleted_linker, _index_linker_)
+            # put OO first 
+            linker_coord_list.sort(reverse=True)
+            for (type, coord_linker, coord_linker_neighbour, metal) in linker_coord_list:
                 output_sites_T = []
-                _index_metal_ = np.array([int(x[0]) for x in sites])
                 if added_charge < abs(self.charge_comp):
-                    if len(_index_metal_) == 1:
-                        coord_atom_index = metal_coord_dict_sitebased[_index_metal_[0]][0][0]
-                        first_neighbourList = [ deleted_linker[_index_[0]] for _index_ in metal_coord_neighbour_dict_sitebased[coord_atom_index]]
-                        output_sites_T.extend(addOH(metal_dict_sitebased[_index_metal_[0]], metal_coord_dict_sitebased[_index_metal_[0]][0],first_neighbourList))
+                    if type == 'OO' and self.capping_mod == 'OH':
+                        output_sites_T.extend(addHOHOH(coord_linker, coord_linker_neighbour, metal))
                         added_charge += 1
-                        print('OH added')
-                    elif len(_index_metal_) == 2:
-                        metals = [ mof[index_fixed_id_dict[_index_]] for _index_ in _index_metal_]
-                        coord_atom = [ metal_coord_dict_sitebased[_index_] for _index_ in _index_metal_ ]
-                        output_sites_T.extend(addHOHOH(metals, coord_atom ))
+                    elif self.capping_mod == 'OH':
+                        output_sites_T.extend(addOH(coord_linker, coord_linker_neighbour, metal))
                         added_charge += 1
-                        print('HOHOH added')
-                    elif len(_index_metal_) == 4:
-                        metals = [ mof[index_fixed_id_dict[_index_]] for _index_ in _index_metal_]
-                        coord_atom = [ metal_coord_dict_sitebased[_index_] for _index_ in _index_metal_ ]
-                        for i in range(1,4):
-                            dist = metals[0].frac_coords - metals[i].frac_coords
-                            if sum(dist<0.5) >= 2:
-                                metals_1 = [metals[0],metals[i]]
-                                coord_atom_1 = [coord_atom[0],coord_atom[i]]
-                                metals.remove(metals[0])
-                                metals.remove(metals[i])
-                                coord_atom.remove(coord_atom[0])
-                                coord_atom.remove(coord_atom[i])
-                                break
-
-                        output_sites_T.extend(addHOHOH(metals_1, coord_atom_1 ))
-                        output_sites_T.extend(addHOHOH(metals, coord_atom ))
-
-                        added_charge += 2
-                        print('2 HOHOH added')
                     else:
-                        print('WARNING: more than two coord in metal cluster during capping(charged), nothing added')
+                        output_sites_T.extend(addX(coord_linker, coord_linker_neighbour, metal))
+                        added_charge += 1
                 else:
-                    if len(_index_metal_) == 1:
-                        coord_atom_index = metal_coord_dict_sitebased[_index_metal_[0]][0][0]
-                        first_neighbourList = [ deleted_linker[_index_[0]] for _index_ in metal_coord_neighbour_dict_sitebased[coord_atom_index]]
-                        output_sites_T = addH2O(metal_dict_sitebased[_index_metal_[0]], metal_coord_dict_sitebased[_index_metal_[0]][0],first_neighbourList)
-                       
-                    else:
-                        print('WARNING: more than one coord in metal cluster during capping(neutral), nothing added')
-                
+                    output_sites_T.extend(addH2O(coord_linker, coord_linker_neighbour, metal))
+
                 for __site__ in output_sites_T:
                     self.output_sites.append(__site__)
+
+        addedAtoms = merge_sites(mgStructure.Structure.from_sites(self.output_sites))
+        WriteStructure(self.output_dir, addedAtoms, name = 'CONTCAR'+'_'+str(self.linker_type)+'_debug_addedAtoms', sort = True)
+
+        WriteStructure(self.output_dir, deleted_linker, name = 'CONTCAR'+'_'+str(self.linker_type)+'_debug_deleted_linker', sort = True)     
 
         for __site__ in mof:
             self.output_sites.append(__site__)
         self.outStructure = merge_sites(mgStructure.Structure.from_sites(self.output_sites))
-        if added_charge != added_charge:
-            raise("charge not compensated")
-        WriteStructure(self.output_dir, self.outStructure, name = 'POSCAR'+'_'+str(self.linker_type), sort = True)
-
+        if abs(added_charge) != abs(self.charge_comp):
+            WriteStructure(self.output_dir, self.outStructure, name = 'CONTCAR'+'_'+str(self.linker_type)+'_chargeError', sort = True)
+        else:
+            WriteStructure(self.output_dir, self.outStructure, name = 'CONTCAR'+'_'+str(self.linker_type), sort = True)
         return 
         
     def Build_supercell(self):
@@ -236,7 +212,7 @@ class DefectMOFStructure():
         self.mof_superCell = self.original_mof
         self.mof_superCell = self.make_supercell(copy.deepcopy(self.original_mof), self.superCell)
 
-        print("Finish super cell build, which took %f Seconds" % (time.time()-t0))
+        print("3.1 Finished super cell build, which took %f seconds" % (time.time()-t0))
         
     def DefectGen(self):
 
@@ -257,8 +233,8 @@ class DefectMOFStructure():
         sampled_linker_to_be_delete = np.random.choice(possible_linker_LCA,size=self.numofdefect, replace=False )
         self.vacant_mof = copy.deepcopy(self.mof_superCell)
 
-        # debug use; to visulize all molecules
-        # for i in range(0,12):
+        # debug use to visulize all molecules
+        # for i in range(0,4):
         #     debugsite = []
         #     for site in self.mof_superCell: 
         #         if site.LCA ==i :
@@ -282,12 +258,12 @@ class DefectMOFStructure():
             
         self.deleted_linker = mgStructure.Structure.from_sites(deleted_sites)
 
-        WriteStructure(self.output_dir, self.vacant_mof, name = 'POSCAR', sort = True)
+        WriteStructure(self.output_dir, self.vacant_mof, name = 'POSCAR_'+str(self.linker_type), sort = True)
         # capping OMS
         try: 
             self.Sub_with_Capping_agent( copy.deepcopy(self.vacant_mof), copy.deepcopy(self.deleted_linker))
         except:
-            os.rename(self.output_dir, self.output_dir+'_debug')
+            shutil.move(self.output_dir, self.output_dir+'_debug')
         
         return
                 

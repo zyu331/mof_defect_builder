@@ -1,0 +1,1 @@
+OC(=O)C1=C(N=C([N]1)c1ccncc1)C(=O)[O-].OC(=O)C1=NC(=N[C]1C(=O)[O-])c1ccncc1.[O-]C(=O)C1=C(N=C([N]1)c1ccncc1)C(=O)O.[Zn] MOFid-v1.UNKNOWN.cat0;RUVMAX_clean_min_charges

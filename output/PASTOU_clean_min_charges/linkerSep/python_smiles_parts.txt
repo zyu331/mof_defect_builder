@@ -1,0 +1,2 @@
+node	Cl[Cd]
+linker	C1=N[CH]N([N]1)CC1=Nc2c([N]1)cccc2

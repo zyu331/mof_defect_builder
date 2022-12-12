@@ -1,0 +1,1 @@
+C(Cn1cncc1)CCn1cncc1.[O-]C(=O)c1cc(OCCOc2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-].[Zn] MOFid-v1.bbf,UNKNOWN.cat0;ISIMAZ_clean_min_charges

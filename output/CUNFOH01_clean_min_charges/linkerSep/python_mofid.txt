@@ -1,0 +1,1 @@
+CC1=N[N]C(=N1)C.I[Cu]12[Cu]3([Cu]1([Cu]23I)I)I.[Cu] MOFid-v1.ERROR.cat0;CUNFOH01_clean_min_charges

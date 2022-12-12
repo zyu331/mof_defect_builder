@@ -1,0 +1,4 @@
+node	[Fe]
+node	[Pt]
+linker	[C]#N
+linker	n1ccncc1

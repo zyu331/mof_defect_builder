@@ -1,0 +1,3 @@
+node	[Cu][Cu]
+linker	[S]C#N
+linker	c1ccc(cn1)OCC(COc1cccnc1)(COc1cccnc1)COc1cccnc1

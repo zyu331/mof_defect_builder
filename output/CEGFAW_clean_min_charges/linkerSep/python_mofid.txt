@@ -1,0 +1,1 @@
+CC1=NC=C[N]1.CC1=N[CH]C=N1.[Ag]1[Ag][Ag][Ag]1.[Ag][Ag] MOFid-v1.ERROR.cat0;CEGFAW_clean_min_charges

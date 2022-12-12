@@ -1,0 +1,2 @@
+WFNRNCNCXRGUKN-UHFFFAOYSA-L	4	16	InChI=1S/C8H2F4O4/c9-3-1(7(13)14)4(10)6(12)2(5(3)11)8(15)16/h(H,13,14)(H,15,16)/p-2	WFNRNCNCXRGUKN	[O-]C(=O)c1c(F)c(F)c(c(c1F)F)C(=O)[O-]	[O-][C]([c]1[c](F)[c](F)[c]([c]([c]1F)F)[C]([O])[O-])[O]
+

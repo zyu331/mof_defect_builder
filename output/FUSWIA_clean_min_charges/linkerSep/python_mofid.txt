@@ -1,0 +1,1 @@
+Cl[Cu].n1ccc(cc1)C1=N[N]N=N1 MOFid-v1.ERROR.cat0;FUSWIA_clean_min_charges

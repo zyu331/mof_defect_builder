@@ -1,0 +1,1 @@
+COC1C(OC)CCc2c1c(ccn2)c1ccncc1.[O-]C(=O)C=CC(=O)[O-].[Zn][Zn] MOFid-v1.pcu.cat0;QOMFAA_clean_min_charges

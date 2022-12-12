@@ -1,0 +1,2 @@
+PBAYDYUZOSNJGU-UHFFFAOYSA-L	2	2	InChI=1S/C7H4O6/c8-3-1-4(6(9)10)13-5(2-3)7(11)12/h1-2H,(H,9,10)(H,11,12)/p-2	PBAYDYUZOSNJGU	[O-]C(=O)c1oc(cc(=O)c1)C(=O)[O-]	[O][c]1[cH][c](o[c]([cH]1)[C]([O])[O-])[C]([O])[O-]
+

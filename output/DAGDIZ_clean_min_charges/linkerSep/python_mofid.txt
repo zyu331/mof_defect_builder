@@ -1,0 +1,1 @@
+[Cd].[O-]C(=O)C1CC(CC(C1)C(=O)[O-])C(=O)[O-] MOFid-v1.UNKNOWN.cat0;DAGDIZ_clean_min_charges

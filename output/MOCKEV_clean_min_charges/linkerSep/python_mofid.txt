@@ -1,0 +1,1 @@
+[Cu][Cu].[O-]C(=O)c1cc(N=Nc2cc(cc(c2)C(=O)[O-])C(=O)[O-])cc(c1)C(=O)[O-] MOFid-v1.nbo,fof.cat0;MOCKEV_clean_min_charges

@@ -1,0 +1,4 @@
+node	Cl[Zn]
+node	[Zn]
+linker	C1=N[N]C=N1
+linker	[N]1C=NN=C1

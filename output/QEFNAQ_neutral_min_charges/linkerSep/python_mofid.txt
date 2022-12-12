@@ -1,0 +1,1 @@
+O=[C]1=NC=CC=N1.[Cu] MOFid-v1.sod.cat0;QEFNAQ_neutral_min_charges

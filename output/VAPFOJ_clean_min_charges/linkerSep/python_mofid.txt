@@ -1,0 +1,1 @@
+[Ba].[O-]C(=O)C1=CC2=C3C=C(C=CN3[Pt]N2C=C1)C(=O)[O-] MOFid-v1.ERROR.cat0;VAPFOJ_clean_min_charges

@@ -1,0 +1,1 @@
+[In].[O-]C(=O)C1CCC(C1(C)C)(C)C(=O)[O-] MOFid-v1.qtz.cat0;DOTTUC_charged_min_charges

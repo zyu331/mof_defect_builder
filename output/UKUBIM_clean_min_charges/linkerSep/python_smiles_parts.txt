@@ -1,0 +1,2 @@
+node	[Cd]
+linker	n1ccc(cc1)OCC(COc1ccncc1)(COc1ccncc1)COc1ccncc1

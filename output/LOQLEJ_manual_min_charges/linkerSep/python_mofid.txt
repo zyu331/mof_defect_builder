@@ -1,0 +1,1 @@
+[In].[O-]C(=O)c1ccc(cc1)C(=O)[O-].[OH] MOFid-v1.UNKNOWN.cat0;LOQLEJ_manual_min_charges

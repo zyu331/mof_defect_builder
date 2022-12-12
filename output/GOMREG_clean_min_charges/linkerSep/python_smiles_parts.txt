@@ -1,0 +1,2 @@
+node	[Al]
+linker	[O]P(=O)([O])[O]

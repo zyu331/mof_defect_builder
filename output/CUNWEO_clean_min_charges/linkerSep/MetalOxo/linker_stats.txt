@@ -1,0 +1,2 @@
+CSRRMJQYHRCQEY-UHFFFAOYSA-M	3	16	InChI=1S/C14H8N2O4/c17-12-10-2-1-8(14(19)20)7-11(10)13(18)16(12)9-3-5-15-6-4-9/h1-7H,(H,19,20)/p-1	CSRRMJQYHRCQEY	O=C1N(c2ccncc2)C(=O)c2c1cc(cc2)C(=O)[O-]	[O][C]1[c]2[cH][c]([cH][cH][c]2[C](N1[c]1[cH][cH][n][cH][cH]1)[O])[C]([O])[O-]
+

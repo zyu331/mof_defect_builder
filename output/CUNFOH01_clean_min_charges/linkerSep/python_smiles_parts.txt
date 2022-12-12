@@ -1,0 +1,3 @@
+node	I[Cu]12[Cu]3([Cu]1([Cu]23I)I)I
+node	[Cu]
+linker	CC1=N[N]C(=N1)C

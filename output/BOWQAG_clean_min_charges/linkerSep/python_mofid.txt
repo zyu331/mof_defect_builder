@@ -1,0 +1,1 @@
+N1=NN=C([N]1)c1ccc(cc1)C1=NN=N[N]1.[Zn].n1ccc(cc1)c1ccncc1 MOFid-v1.dia.cat0;BOWQAG_clean_min_charges

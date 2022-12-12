@@ -1,0 +1,1 @@
+OC(=O)CCC(P(=O)([O])[O])(C(=O)O)CC(=O)O.[Ca] MOFid-v1.fes,UNKNOWN.cat0;CEGWER_clean_min_charges

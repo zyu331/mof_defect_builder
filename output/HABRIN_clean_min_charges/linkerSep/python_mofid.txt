@@ -1,0 +1,1 @@
+[O-]C(=O)c1ccc(cc1)C(=O)[O-].[Zn].c1ncn(c1)[B](n1cncc1)(n1cncc1)n1cncc1 MOFid-v1.UNKNOWN.cat0;HABRIN_clean_min_charges
